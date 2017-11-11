@@ -1,8 +1,10 @@
-var React = require('react');
-var Slider = require('react-slick');
+import React, { Component } from 'react';
+import Slider from 'react-slick';
+import "../../node_modules/slick-carousel/slick/slick.css";
+import "../../node_modules/slick-carousel/slick/slick-theme.css";
 
-class SimpleSlider extends React.Component {
-  render: function () {
+class SimpleSlider extends Component {
+  render() {
     var settings = {
       dots: true,
       infinite: true,
@@ -22,3 +24,5 @@ class SimpleSlider extends React.Component {
     );
   }
 }
+
+export default SimpleSlider;
