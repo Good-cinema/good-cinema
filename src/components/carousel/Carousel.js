@@ -16,11 +16,31 @@ class SimpleSlider extends Component {
     };
     return (
       <Slider {...settings}>
-          <div className="fpmain"><img src={ require("../../img/ptposter.jpg") } alt="PT Poster" style={{width: 338, height: 500}}/></div>
-          <div className="fpmain"><img src={ require("../../img/ramboposter.jpg") } alt="Rambo Poster" style={{width: 338, height: 500}}/></div>
-          <div className="fpmain"><img src={ require("../../img/avengersposter.jpg") } alt="Avengers Poster" style={{width: 338, height: 500}}/></div>
-          <div className="fpmain"><img src={ require("../../img/swposter.jpg") } alt="SW Poster" style={{width: 338, height: 500}}/></div>
-          <div className="fpmain"><img src={ require("../../img/jumanjiposter.jpg") } alt="Jumanji Poster" style={{width: 338, height: 500}}/></div>
+          <div className="fpmain">
+            <img src={ require("../../img/ptposter.jpg") } 
+            alt="PT Poster" 
+            style={{width: 338, height: 500}}/>
+          </div>
+          <div className="fpmain">
+            <img src={ require("../../img/ramboposter.jpg") } 
+            alt="Rambo Poster" 
+            style={{width: 338, height: 500}}/>
+          </div>
+          <div className="fpmain">
+            <img src={ require("../../img/avengersposter.jpg") } 
+            alt="Avengers Poster" 
+            style={{width: 338, height: 500}}/>
+          </div>
+          <div className="fpmain">
+            <img src={ require("../../img/swposter.jpg") } 
+            alt="SW Poster" 
+            style={{width: 338, height: 500}}/>
+          </div>
+          <div className="fpmain">
+            <img src={ require("../../img/jumanjiposter.jpg") } 
+            alt="Jumanji Poster" 
+            style={{width: 338, height: 500}}/>
+          </div>
       </Slider>
     );
   }
