@@ -12,16 +12,17 @@ class SimpleSlider extends Component {
   render() {
     // This is where you add the settings for the slider itself. There are many options.
     var settings = {
-      arrows: true,
+      accessibility: true,
+      arrows: false,
+      autoplay: true,
+      autoplaySpeed: 5000,
       centerMode: true,
       centerPadding: "20px",
-      className: "slick-arrow",
       dots: true,
       infinite: true,
       speed: 500,
       slidesToShow: 3,
       slidesToScroll: 1,
-
     };
     return (
       // This is where the slider and the settings themselves are initiated along with the actual slides.
