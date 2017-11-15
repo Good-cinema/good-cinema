@@ -1,0 +1,37 @@
+.movieBody {
+    display: flex;
+    height: 725px;
+    width: 100%;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    align-content: flex-start;
+}
+
+.equalHMR {
+	width: 32%;
+	margin-bottom: 1%;
+}
+
+.marginTop {
+    margin-top: -1%;
+}
+
+.marginBottom {
+    margin-bottom: 3%;
+}
+
+.reviewButton {
+    background-color: #a0a0a0;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 12px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px #afafaf;
+    padding: 10px;
+    vertical-align: 100%;
+    margin-left: 50%;
+}
