@@ -1,0 +1,21 @@
+.fpmain {
+    height: 500px;
+    background-color: lightblue;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-content: stretch;
+    text-align: center;
+    vertical-align: 100px;
+}
+
+.fpmain img {
+    display: block;
+    margin: 0 auto;
+}
+
+* {
+    min-height: 0;
+    min-width: 0;
+  }
