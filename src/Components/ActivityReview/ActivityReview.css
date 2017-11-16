@@ -1,0 +1,11 @@
+img{
+    object-fit: contain;
+}
+
+.circle{
+    border-radius: 50%;
+    border: 1px solid lightgrey;
+}
+.padding{
+    padding: 8px;
+}

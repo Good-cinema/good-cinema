@@ -3,6 +3,7 @@ import './../../App.css';
 import Header from './../Header/Header';
 import Footer from './../Footer/Footer';
 import './SiteFrame.css';
+import ActivityFeed from './../ActivityFeed/ActivityFeed';
 
 class SiteFrame extends Component {
     render() {
@@ -10,8 +11,12 @@ class SiteFrame extends Component {
             <div>
                 <Header/>
                     <main className='container'>
-                        {this.props.children}
+                                  {this.props.children}
+                <ActivityFeed/>
+
                     </main>
+                   
+                    
                 <Footer/>
             </div>
         );
