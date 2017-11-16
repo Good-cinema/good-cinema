@@ -9,3 +9,22 @@ img{
 .padding{
     padding: 8px;
 }
+
+.ActivityReview{
+    box-shadow: 0px 0px 5px #afafaf;
+    padding: 4px;
+    margin: 4px;
+    font-size: small;
+}
+
+.Watch-btn{
+  display: inline-block;
+  float: right;
+  clear: right;
+  padding: 0px 8px 8px 0px;
+  
+  
+  
+  
+}
+

@@ -21,7 +21,7 @@ class SimpleSlider extends Component {
       dots: true,
       infinite: true,
       speed: 500,
-      slidesToShow: 3,
+      slidesToShow: 5,
       slidesToScroll: 1,
     };
     return (
@@ -29,28 +29,23 @@ class SimpleSlider extends Component {
       <Slider {...settings}>
         <div className="fpmain">
           <img src={ require("../../img/ptposter.jpg") } 
-          alt="PT Poster" 
-          style={{width: 338, height: 500}}/>
+          alt="PT Poster" />
         </div>
         <div className="fpmain">
           <img src={ require("../../img/ramboposter.jpg") } 
-          alt="Rambo Poster" 
-          style={{width: 338, height: 500}}/>
+          alt="Rambo Poster" />
         </div>
         <div className="fpmain">
           <img src={ require("../../img/avengersposter.jpg") } 
-          alt="Avengers Poster" 
-          style={{width: 338, height: 500}}/>
+          alt="Avengers Poster" />
         </div>
         <div className="fpmain">
           <img src={ require("../../img/swposter.jpg") } 
-          alt="SW Poster" 
-          style={{width: 338, height: 500}}/>
+          alt="SW Poster" />
         </div>
         <div className="fpmain">
           <img src={ require("../../img/jumanjiposter.jpg") } 
-          alt="Jumanji Poster" 
-          style={{width: 338, height: 500}}/>
+          alt="Jumanji Poster" />
         </div>
       </Slider>
     );

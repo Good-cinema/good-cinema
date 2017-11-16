@@ -10,13 +10,9 @@ class SiteFrame extends Component {
         return (
             <div>
                 <Header/>
-                    <main className='container'>
-                                  {this.props.children}
-                <ActivityFeed/>
-
-                    </main>
-                   
-                    
+                <main className='container'>
+                    {this.props.children}
+                </main>
                 <Footer/>
             </div>
         );

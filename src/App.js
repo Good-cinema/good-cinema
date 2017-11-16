@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import './App.css';
 import SiteFrame from './Components/SiteFrame/SiteFrame';
+import HomePage from './Views/HomePage/HomePage';
 
 class App extends Component {
   render() {
     return (
       <div>
         <SiteFrame>
-          <p> router goes here</p>
+         
+         <HomePage/>
         </SiteFrame>
       </div>
     );
