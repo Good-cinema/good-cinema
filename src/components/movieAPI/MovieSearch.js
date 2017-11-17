@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-export default class MovieTitle extends Component {
+export default class MovieSearch extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -9,7 +9,7 @@ export default class MovieTitle extends Component {
     }
 
     componentDidMount() {
-        fetch('https://api.themoviedb.org/3/movie/18785?api_key=c1518c5dfeb80ddb9ed594cba690acaf&language=en-US')
+        fetch('https://api.themoviedb.org/3/search/movie?api_key=c1518c5dfeb80ddb9ed594cba690acaf&language=en-US&query=The%20Hangover&page=1&include_adult=false')
         .then(response => {
             if (!response.ok) {
                 throw Error("Network request failed")
@@ -21,7 +21,7 @@ export default class MovieTitle extends Component {
             this.setState({
                 movieAPI: data
             })
-    }, () => {
+        }, () => {
         this.setState({
           requestFailed: true
         })
@@ -31,9 +31,13 @@ export default class MovieTitle extends Component {
     render() {
         if (this.state.requestFailed) return <p>Failed!</p>
         if (!this.state.movieAPI) return <p>Loading...</p>
+        var results = this.state.movieAPI.results;
+        var listItems = results.map((result) =>
+            <li>Title: {result.title} Avg: {result.vote_average} Popularity: {result.popularity}</li>
+         );
         return (
             <div>
-                <span>{this.state.movieAPI.original_title}</span>
+                <span>{listItems}</span>
             </div>
         )
     }
