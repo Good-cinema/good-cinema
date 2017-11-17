@@ -25,13 +25,16 @@ class ActivityReview extends Component{
                     <div className='flex-grow-1'>
                         {this.props.review.review_text}
                     </div>
+                    
+                </div>  
+                <div className='Watch-btn'>              
                     <div>
-                        <div className='Watch-btn' >
-                            <WatchlistButton/>
-                        </div>
+                        <WatchlistButton/>
                     </div>
                 </div>
+            
             </div>
+
         );
 
     }

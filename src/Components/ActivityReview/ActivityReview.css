@@ -15,16 +15,13 @@ img{
     padding: 4px;
     margin: 4px;
     font-size: small;
+    overflow-y:
 }
 
 .Watch-btn{
-  display: inline-block;
-  float: right;
-  clear: right;
-  padding: 0px 8px 8px 0px;
-  
-  
-  
+    padding: 0px 8px 8px 0px;
+    flex-direction: column-reverse;
+    display: flex;
   
 }
 
