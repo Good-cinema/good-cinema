@@ -21,21 +21,20 @@ export default class MoviePoster extends Component {
             this.setState({
                 movieAPI: data
             })
-    }, () => {
+        }, () => {
         this.setState({
           requestFailed: true
         })
       })
     }
 
-    
-
     render() {
         if (this.state.requestFailed) return <p>Failed!</p>
         if (!this.state.movieAPI) return <p>Loading...</p>
+        var poster = 'https://image.tmdb.org/t/p/w500' + this.state.movieAPI.poster_path;
         return (
             <div>
-                <span><img src={this.state.movieAPI.poster_path} /></span>
+                <span><img src={poster} style={{height: 500, width: 338}}/></span>
             </div>
         )
     }
