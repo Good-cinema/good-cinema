@@ -15,11 +15,21 @@
 }
 
 .marginTop {
-    margin-top: -1%;
+    margin-top: -2%;
 }
 
 .marginBottom {
     margin-bottom: 3%;
+}
+
+.overview {
+    height: 400px;
+    display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: stretch;
+	align-content: stretch;
 }
 
 .reviewButton {

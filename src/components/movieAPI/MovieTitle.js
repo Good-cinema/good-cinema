@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-export default class MovieAPI extends Component {
+export default class MovieTitle extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -33,7 +33,7 @@ export default class MovieAPI extends Component {
         if (!this.state.movieAPI) return <p>Loading...</p>
         return (
             <div>
-                <span>{this.state.movieAPI.overview}</span>
+                <span>{this.state.movieAPI.original_title}</span>
             </div>
         )
     }
@@ -41,10 +41,3 @@ export default class MovieAPI extends Component {
 
 
 }
-
-
-
-
-
-
-
