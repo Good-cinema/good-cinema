@@ -1,0 +1,27 @@
+img{
+    object-fit: contain;
+}
+
+.circle{
+    border-radius: 50%;
+    border: 1px solid lightgrey;
+}
+.padding{
+    padding: 8px;
+}
+
+.ActivityReview{
+    box-shadow: 0px 0px 5px #afafaf;
+    padding: 4px;
+    margin: 4px;
+    font-size: small;
+    overflow-y:
+}
+
+.Watch-btn{
+    padding: 0px 8px 8px 0px;
+    flex-direction: column-reverse;
+    display: flex;
+  
+}
+

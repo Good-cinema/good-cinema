@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
-
+import './movie.css';
 import StarRatingComponent from 'react-star-rating-component';
 import WatchlistButton from '../watchlistButton/WatchlistButton';
 import MovieAPI from '../movieAPI/MovieAPI';
-
-import './movie.css';
 
 export default class Movie extends Component {
     constructor() {
