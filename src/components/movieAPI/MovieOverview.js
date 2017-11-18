@@ -9,7 +9,7 @@ export default class MovieOverview extends Component {
     }
 
     componentDidMount() {
-        fetch('https://api.themoviedb.org/3/movie/1368?api_key=c1518c5dfeb80ddb9ed594cba690acaf&language=en-US')
+        fetch('https://api.themoviedb.org/3/movie/18785?api_key=c1518c5dfeb80ddb9ed594cba690acaf&language=en-US')
         .then(response => {
             if (!response.ok) {
                 throw Error("Network request failed")
