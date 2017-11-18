@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import HomePage from './components/homePage/HomePage';
 import SimpleSlider from './components/carousel/Carousel';
 import Movie from './components/movie/Movie';
-import SiteFrame from './Components/SiteFrame/SiteFrame';
+// import SiteFrame from './Components/SiteFrame/SiteFrame';
 // import HomePage from './Views/HomePage/HomePage';
 
 import './App.css';
