@@ -4,6 +4,9 @@ import Header from './../Header/Header';
 import Footer from './../Footer/Footer';
 import './SiteFrame.css';
 import ActivityFeed from './../ActivityFeed/ActivityFeed';
+import Movie from '../movie/Movie';
+import NewMovies from '../movieAPI/MovieNew';
+import UpcomingMovies from '../movieAPI/MovieUpcoming';
 
 class SiteFrame extends Component {
     render() {
@@ -12,6 +15,15 @@ class SiteFrame extends Component {
                 <Header/>
                 <main className='container'>
                     {this.props.children}
+                    <div>
+                        <Movie />
+                    </div>
+                    <div>
+                        <NewMovies />
+                    </div>
+                    <div>
+                        <UpcomingMovies />
+                    </div>
                 </main>
                 <Footer/>
             </div>
