@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+nimport React, { Component } from 'react';
 import './movie.css';
 import WatchlistButton from '../watchlistButton/WatchlistButton';
 import MovieOverview from '../movieAPI/MovieOverview';

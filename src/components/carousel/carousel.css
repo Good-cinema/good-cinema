@@ -1,5 +1,4 @@
 .fpmain {
-    height: 500px;
     background-color: lightblue;
     display: flex;
     flex-direction: row;
@@ -13,6 +12,8 @@
 .fpmain img {
     display: block;
     margin: 0 auto;
+    width:100%;
+    height:100%;
 }
 
 * {
