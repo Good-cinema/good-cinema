@@ -2,11 +2,20 @@
     display: flex;
     height: 725px;
     width: 100%;
+    max-width: 1150px;
+    min-width: 1025px;
+    max-height: 725px;
     flex-direction: column;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-around;
     align-items: stretch;
     align-content: flex-start;
+    margin-left: 2%;
+    overflow: hidden;
+}
+
+.movieBody h1 {
+    text-align: center;
 }
 
 .equalHMR {
@@ -15,11 +24,29 @@
 }
 
 .marginTop {
-    margin-top: -1%;
+    margin-top: 5%;
 }
 
 .marginBottom {
     margin-bottom: 3%;
+}
+
+.negMarginBottom {
+    margin-bottom: -3%;
+}
+
+.negativeMarginTop {
+    margin-top: -3%;
+}
+
+.overview {
+    height: 400px;
+    display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: stretch;
+	align-content: stretch;
 }
 
 .reviewButton {
@@ -33,5 +60,9 @@
     box-shadow: 5px 5px 5px #afafaf;
     padding: 10px;
     vertical-align: 100%;
-    margin-left: 50%;
+    margin-left: 10%;
+}
+
+.marginLeft {
+    margin-left: 2%;
 }

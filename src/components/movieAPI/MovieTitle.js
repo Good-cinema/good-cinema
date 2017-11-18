@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-export default class MovieAPI extends Component {
+export default class MovieTitle extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -9,7 +9,7 @@ export default class MovieAPI extends Component {
     }
 
     componentDidMount() {
-        fetch('https://api.themoviedb.org/3/movie/1368?api_key=c1518c5dfeb80ddb9ed594cba690acaf&language=en-US')
+        fetch('https://api.themoviedb.org/3/movie/18785?api_key=c1518c5dfeb80ddb9ed594cba690acaf&language=en-US')
         .then(response => {
             if (!response.ok) {
                 throw Error("Network request failed")
@@ -33,7 +33,7 @@ export default class MovieAPI extends Component {
         if (!this.state.movieAPI) return <p>Loading...</p>
         return (
             <div>
-                <span>{this.state.movieAPI.overview}</span>
+                <span>{this.state.movieAPI.original_title}</span>
             </div>
         )
     }
@@ -41,10 +41,3 @@ export default class MovieAPI extends Component {
 
 
 }
-
-
-
-
-
-
-
