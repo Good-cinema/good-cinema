@@ -6,6 +6,7 @@ import SimpleSlider from './components/carousel/Carousel';
 import Movie from './components/movie/Movie';
 import MovieSearch from './components/movieAPI/MovieSearch';
 import SiteFrame from './components/SiteFrame/SiteFrame';
+
 // import HomePage from './Views/HomePage/HomePage';
 
 import './App.css';
