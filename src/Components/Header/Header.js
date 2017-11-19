@@ -9,7 +9,7 @@ class Header extends Component {
         return (
             <div className='Header flexbox'>
                 <div className='logo'>
-                    <img className='center-block' width='50' height='50' src={Logo}></img>
+                    <img className='center-block' width='50' height='50' src={Logo} alt='Logo'></img>
                 </div>
                 <div className='flex-2'>
                     <div className="input-group add-on ">
