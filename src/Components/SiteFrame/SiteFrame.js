@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import './../../App.css';
 import Header from './../Header/Header';
 import Footer from './../Footer/Footer';
-import './SiteFrame.css';
-import ActivityFeed from './../ActivityFeed/ActivityFeed';
 import Movie from '../movie/Movie';
+import './SiteFrame.css';
+// import ActivityFeed from './../ActivityFeed/ActivityFeed';
 import NewMovies from '../movieAPI/MovieNew';
 import UpcomingMovies from '../movieAPI/MovieUpcoming';
 

@@ -35,7 +35,7 @@ export default class NewMovies extends Component {
         if (!this.state.movieAPI) return <p>Loading...</p>
         var results = this.state.movieAPI.results;
         var listItems = results.map((result) =>
-            <li> <img src={'https://image.tmdb.org/t/p/w500' + result.poster_path}/> <br/> {result.title} {result.release_date}</li>
+            <li> <img src={'https://image.tmdb.org/t/p/w500' + result.poster_path} alt='Poster'/> <br/> {result.title} {result.release_date}</li>
          );
         return (
             <div className="body">
