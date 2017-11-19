@@ -19,15 +19,12 @@ class SiteFrame extends Component {
                     <div>
                         <Movie />
                     </div>
-<<<<<<< HEAD
-=======
                     <div>
                         <NewMovies />
                     </div>
                     <div>
                         <UpcomingMovies />
                     </div>
->>>>>>> master
                 </main>
                 <Footer/>
             </div>
