@@ -39,7 +39,7 @@ export default class NewMovies extends Component {
          );
         return (
             <div className="body">
-                <span className="spanSideBar">{listItems}</span>
+                <span className="newSideBar">{listItems}</span>
             </div>
         )
     }

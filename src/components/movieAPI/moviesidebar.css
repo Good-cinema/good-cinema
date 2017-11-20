@@ -1,7 +1,14 @@
 .body {
-    height: 500px;
-    width: 225px;
+    height: 530px;
+    width: 200px;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+    align-content: stretch;
+    outline: solid;
 }
 
 .body img {
@@ -9,11 +16,24 @@
     width: 100px;
 }
 
-.spanSideBar {
+.newSideBar {
+    height: 500px;
+    width: 200px;
     margin: 5px 0;
 }
 
-.spanSideBar li {
+.newSideBar li {
+    list-style: none;
+
+}
+
+.upcomingSideBar {
+    height: 525px;
+    width: 200px;
+    margin: 5px 0;
+}
+
+.upcomingSideBar li {
     list-style: none;
 
 }

@@ -18,11 +18,8 @@ class SiteFrame extends Component {
                     <div>
                         <Movie />
                     </div>
-                    <div>
+                    <div className="newMovies">
                         <NewMovies />
-                    </div>
-                    <div>
-                        <UpcomingMovies />
                     </div>
                 </main>
                 <Footer/>
