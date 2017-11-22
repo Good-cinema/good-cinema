@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 export default class MovieTitle extends Component {
     constructor(props) {
@@ -9,19 +10,12 @@ export default class MovieTitle extends Component {
     }
 
     componentDidMount() {
-        fetch('https://api.themoviedb.org/3/movie/18785?api_key=c1518c5dfeb80ddb9ed594cba690acaf&language=en-US')
-        .then(response => {
-            if (!response.ok) {
-                throw Error("Network request failed")
-              }
-            return response;
-        })
-        .then(data => data.json())
-        .then(data => {    
+        axios.get('http://localhost:3000/api/get-movie-details')
+        .then(res => {   
             this.setState({
-                movieAPI: data
+                movieAPI: res.data
             })
-    }, () => {
+        }, () => {
         this.setState({
           requestFailed: true
         })
