@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 export default class MovieSearch extends Component {
     constructor(props) {
@@ -9,17 +10,10 @@ export default class MovieSearch extends Component {
     }
 
     componentDidMount() {
-        fetch('https://api.themoviedb.org/3/search/movie?api_key=c1518c5dfeb80ddb9ed594cba690acaf&language=en-US&query=The%20Hangover&page=1&include_adult=false')
-        .then(response => {
-            if (!response.ok) {
-                throw Error("Network request failed")
-              }
-            return response;
-        })
-        .then(data => data.json())
-        .then(data => {    
+        axios.get('http://localhost:3000/api/get-movies-by-query')
+        .then(res => {   
             this.setState({
-                movieAPI: data
+                movieAPI: res.data
             })
         }, () => {
         this.setState({
