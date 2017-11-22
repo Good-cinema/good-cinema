@@ -1,10 +1,11 @@
-.body {
-    height: 500px;
-    width: 225px;
-    overflow: hidden;
+.UpcomingMovies {
+    height: 100%;
+    width: 100%;
+    overflow-y: auto;
+    border: 1px solid #afafaf;
 }
 
-.body img {
+.UpcomingMovies img {
     height: 150px;
     width: 100px;
 }
@@ -13,9 +14,9 @@
     margin: 5px 0;
 }
 
-.spanSideBar li {
-    list-style: none;
-
+.UpcomingMovies div {
+    padding: 10px;
+    
 }
 
 li:nth-of-type(1n+4) {

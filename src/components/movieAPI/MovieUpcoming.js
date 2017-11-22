@@ -35,11 +35,12 @@ export default class UpcomingMovies extends Component {
         if (!this.state.movieAPI) return <p>Loading...</p>
         var results = this.state.movieAPI.results;
         var listItems = results.map((result) =>
-            <li> <img src={'https://image.tmdb.org/t/p/w500' + result.poster_path} alt="images"/> <br/> {result.title} {result.release_date}</li>
+            <div> <img src={'https://image.tmdb.org/t/p/w500' + result.poster_path} alt="images"/> <br/> {result.title} {result.release_date}</div>
          );
         return (
-            <div className="body">
-                <span className="spanSideBar">{listItems}</span>
+            <div className="UpcomingMovies">
+                {/*<span className="spanSideBar">{listItems}</span>*/}
+                {listItems}
             </div>
         )
     }

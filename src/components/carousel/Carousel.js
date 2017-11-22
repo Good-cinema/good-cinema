@@ -5,7 +5,7 @@ import Slider from 'react-slick';
 import "../../../node_modules/slick-carousel/slick/slick.css";
 import "../../../node_modules/slick-carousel/slick/slick-theme.css";
 // This is the CSS I made that overrides the default CSS for certain settings.
-import "./carousel.css";
+import "./Carousel.css";
 
 // This is the slider component.
 class SimpleSlider extends Component {

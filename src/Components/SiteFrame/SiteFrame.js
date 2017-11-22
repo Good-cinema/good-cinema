@@ -15,15 +15,6 @@ class SiteFrame extends Component {
                 <Header/>
                 <main className='container'>
                     {this.props.children}
-                    <div>
-                        <Movie />
-                    </div>
-                    <div>
-                        <NewMovies />
-                    </div>
-                    <div>
-                        <UpcomingMovies />
-                    </div>
                 </main>
                 <Footer/>
             </div>
