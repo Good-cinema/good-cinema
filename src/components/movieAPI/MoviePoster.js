@@ -34,7 +34,7 @@ export default class MoviePoster extends Component {
         var poster = 'https://image.tmdb.org/t/p/w500' + this.state.movieAPI.poster_path;
         return (
             <div>
-                <span><img src={poster} style={{height: 500, width: 338}}/></span>
+                <span><img src={poster} style={{height: 500, width: 338}} alt='Poster'/></span>
             </div>
         )
     }
