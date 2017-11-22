@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 import './moviesidebar.css';
 
@@ -11,19 +12,12 @@ export default class UpcomingMovies extends Component {
     }
 
     componentDidMount() {
-        fetch('https://api.themoviedb.org/3/movie/upcoming?api_key=c1518c5dfeb80ddb9ed594cba690acaf&language=en-US&page=1')
-        .then(response => {
-            if (!response.ok) {
-                throw Error("Network request failed")
-              }
-            return response;
-        })
-        .then(data => data.json())
-        .then(data => {    
+        axios.get('http://localhost:3000/api/get-upcoming-movies')
+        .then(res => {   
             this.setState({
-                movieAPI: data
+                movieAPI: res.data
             })
-    }, () => {
+        }, () => {
         this.setState({
           requestFailed: true
         })
