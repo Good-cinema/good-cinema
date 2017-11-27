@@ -33,5 +33,7 @@ function getUpcomingMovies() {
 
 module.exports = {
     getMovieDetails: getMovieDetails,
-    getMoviesByQuery: getMoviesByQuery
+    getMoviesByQuery: getMoviesByQuery,
+    getNewMovies: getNewMovies,
+    getUpcomingMovies: getUpcomingMovies
 }

@@ -7,6 +7,7 @@ import './SiteFrame.css';
 // import ActivityFeed from './../ActivityFeed/ActivityFeed';
 import NewMovies from '../movieAPI/MovieNew';
 import UpcomingMovies from '../movieAPI/MovieUpcoming';
+import '../movieAPI/moviesidebar.css';
 
 class SiteFrame extends Component {
     render() {
@@ -18,11 +19,8 @@ class SiteFrame extends Component {
                     <div>
                         <Movie />
                     </div>
-                    <div>
+                    <div className='body'>
                         <NewMovies />
-                    </div>
-                    <div>
-                        <UpcomingMovies />
                     </div>
                 </main>
                 <Footer/>

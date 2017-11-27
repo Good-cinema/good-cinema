@@ -33,7 +33,7 @@ export default class MovieOverview extends Component {
         if (!this.state.movieAPI) return <p>Loading...</p>
         return (
             <div>
-                <span>{this.state.movieAPI.overview}</span>
+                <span className="overview">{this.state.movieAPI.overview}</span>
             </div>
         )
     }

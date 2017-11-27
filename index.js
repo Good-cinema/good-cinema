@@ -22,6 +22,8 @@ massive( process.env.CONNECTION_STRING )
 
 app.get('/api/get-movie-details', controller.getMovieDetails);
 app.get('/api/get-movies-by-query', controller.getMoviesByQuery);
+app.get('/api/get-new-movies', controller.getNewMovies);
+app.get('/app/get-upcoming-movies', controller.getUpcomingMovies);
 
 const port = process.env.PORT || 3000;
 app.listen( port, function() {console.log(`Server listening on port ${this.address().port}.`); } );
