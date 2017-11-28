@@ -33,11 +33,7 @@ export default class NewMovies extends Component {
          );
         return (
             <div className="body">
-<<<<<<< HEAD
-                <span className="newSideBar">{listItems}</span>
-=======
                 <span className="spanSideBar"><p>New Releases</p>{listItems}</span>
->>>>>>> 50631023026edec25ecd1e2038cbcdbb8993fbf9
             </div>
         )
     }
