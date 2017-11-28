@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 import './moviesidebar.css';
 
@@ -11,19 +12,12 @@ export default class NewMovies extends Component {
     }
 
     componentDidMount() {
-        fetch('https://api.themoviedb.org/3/movie/now_playing?api_key=c1518c5dfeb80ddb9ed594cba690acaf&language=en-US&page=1')
-        .then(response => {
-            if (!response.ok) {
-                throw Error("Network request failed")
-              }
-            return response;
-        })
-        .then(data => data.json())
-        .then(data => {    
+        axios.get('http://localhost:3000/api/get-new-movies')
+        .then(res => {   
             this.setState({
-                movieAPI: data
+                movieAPI: res.data
             })
-    }, () => {
+        }, () => {
         this.setState({
           requestFailed: true
         })
@@ -35,11 +29,15 @@ export default class NewMovies extends Component {
         if (!this.state.movieAPI) return <p>Loading...</p>
         var results = this.state.movieAPI.results;
         var listItems = results.map((result) =>
-            <li> <img src={'https://image.tmdb.org/t/p/w500' + result.poster_path} alt='Poster'/> <br/> {result.title} {result.release_date}</li>
+            <li> <a href="../SiteFrame/SiteFrame"><img src={'https://image.tmdb.org/t/p/w500' + result.poster_path} alt='Poster'/></a> <br/> <b>{result.title}</b> {result.release_date}</li>
          );
         return (
             <div className="body">
+<<<<<<< HEAD
                 <span className="newSideBar">{listItems}</span>
+=======
+                <span className="spanSideBar"><p>New Releases</p>{listItems}</span>
+>>>>>>> 50631023026edec25ecd1e2038cbcdbb8993fbf9
             </div>
         )
     }

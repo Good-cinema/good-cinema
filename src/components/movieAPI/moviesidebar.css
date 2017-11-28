@@ -1,14 +1,13 @@
 .body {
-    height: 530px;
-    width: 200px;
-    overflow: hidden;
     display: flex;
-    flex-direction: column;
-	flex-wrap: nowrap;
-	justify-content: center;
-	align-items: center;
-    align-content: stretch;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: auto;
+    min-width: 225px;
+    overflow: hidden;
     outline: solid;
+    vertical-align: center;
 }
 
 .body img {
@@ -16,26 +15,17 @@
     width: 100px;
 }
 
-.newSideBar {
-    height: 500px;
-    width: 200px;
-    margin: 5px 0;
+.body p {
+    font-weight: bold;
 }
 
-.newSideBar li {
-    list-style: none;
-
-}
-
-.upcomingSideBar {
-    height: 525px;
-    width: 200px;
+.spanSideBar {
     margin: 5px 0;
 }
 
 .upcomingSideBar li {
     list-style: none;
-
+    margin-bottom: 10px;
 }
 
 li:nth-of-type(1n+4) {

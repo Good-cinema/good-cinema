@@ -1,12 +1,10 @@
 main{
     min-height: calc(100vh - 110px);
-    display: flex;
-    flex-direction: row;
-	flex-wrap: nowrap;
-	justify-content: center;
-	align-items: center;
-	align-content: stretch;
+}
 
+.container {
+    display: flex;
+    align-items: center;
 }
 
 .newMovies {
