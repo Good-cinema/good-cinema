@@ -8,7 +8,7 @@ import MovieRating from '../movieAPI/MovieRating';
 import MovieAd from '../movieAPI/MovieAd';
 
 export default class Movie extends Component {
-
+    
     render() {
         return(
             <div className="movieBody equalHMRWrap">

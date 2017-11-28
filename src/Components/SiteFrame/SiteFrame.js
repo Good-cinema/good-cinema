@@ -10,6 +10,7 @@ import UpcomingMovies from '../movieAPI/MovieUpcoming';
 import '../movieAPI/moviesidebar.css';
 
 class SiteFrame extends Component {
+    
     render() {
         return (
             <div>
