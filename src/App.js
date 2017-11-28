@@ -6,8 +6,8 @@ import SimpleSlider from './components/Carousel/Carousel';
 import Movie from './components/movie/Movie';
 
 import SiteFrame from './components/SiteFrame/SiteFrame';
-import MovieSearch from './components/movieAPI/MovieSearch';
-import LandingPage from './views/LandingPage/LandinPage';
+import MovieSearch from './views/MovieSearch/MovieSearch.js';
+import LandingPage from './views/LandingPage/LandingPage';
 import ProfilePage from './views/ProfilePage/ProfilePage'
 // import HomePage from './Views/HomePage/HomePage';
 

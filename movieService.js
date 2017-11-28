@@ -7,8 +7,11 @@ function getMovieDetails() {
     })
 }
 
-function getMoviesByQuery() {
-    return axios.get('https://api.themoviedb.org/3/search/movie?api_key=c1518c5dfeb80ddb9ed594cba690acaf&language=en-US&query=The%20Hangover&page=1&include_adult=false')
+function getMoviesByQuery(query, page) {
+    return axios.get('https://api.themoviedb.org/3/search/movie?api_key=c1518c5dfeb80ddb9ed594cba690acaf&language=en-US&include_adult=false', { params:{ 
+        query: query, 
+        page: page } 
+    })
     .then((response) => {
         return response.data
     })

@@ -12,7 +12,7 @@ export default class UpcomingMovies extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:3000/api/get-upcoming-movies')
+        axios.get('http://localhost:8080/api/get-upcoming-movies')
         .then(res => {   
             this.setState({
                 movieAPI: res.data
@@ -33,8 +33,10 @@ export default class UpcomingMovies extends Component {
          );
         return (
             <div className="UpcomingMovies">
-                {/*<span className="spanSideBar">{listItems}</span>*/}
-                {listItems}
+                <div className="body">
+                    {/*<span className="spanSideBar">{listItems}</span>*/}
+                    {listItems}
+                </div>
             </div>
         )
     }
