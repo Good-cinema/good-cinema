@@ -37,9 +37,6 @@ export default class MovieOverview extends Component {
             </div>
         )
     }
-
-
-
 }
 
 
