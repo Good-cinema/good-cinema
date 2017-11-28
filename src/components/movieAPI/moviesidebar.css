@@ -6,8 +6,8 @@
     width: auto;
     min-width: 225px;
     overflow: hidden;
-    outline: solid;
-    vertical-align: center;
+    outline: solid 1px;
+    outline-color: gray;
 }
 
 .body img {

@@ -37,9 +37,6 @@ export default class NewMovies extends Component {
             </div>
         )
     }
-
-
-
 }
 
 

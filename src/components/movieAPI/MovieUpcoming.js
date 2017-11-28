@@ -33,11 +33,8 @@ export default class UpcomingMovies extends Component {
          );
         return (
             <div className="body">
-                <span className="upcomingSideBar">{listItems}</span>
+                <span className="spanSideBar">{listItems}</span>
             </div>
         )
     }
-
-
-
 }
