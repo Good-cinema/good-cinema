@@ -30,7 +30,7 @@ export default class MovieAd extends Component {
         const title = this.state.movieAPI.original_title;
         const movieLink = "https://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Dinstant-video&field-keywords=" + title;
         return (
-            <div id="imgSize" className="body">
+            <div id="imgSize">
                 <a href={movieLink} target="_blank">
                     <img src={ require("../../img/Amazon-Instant-Video-banner.jpg") } 
                     alt="Amazon Banner" />
