@@ -21,18 +21,15 @@ class App extends Component {
           <Switch>
             <Route path='/Login' exact={true} component={ HomePage } />
             <Route path='/' render={(props)=>
-              <SiteFrame>
-                <Switch>
-                  {/* This is the path to the "SimpleSlider" */}
+              <SiteFrame> 
+               
                   <Route path='/SimpleSlider' component={ SimpleSlider }/>
                   <Route path='/Landing' component={ LandingPage }/>
-                  {/* This is the path to the "Movie" */}
                   <Route  exact={true} path='/Movie' component={ Movie }/>
-                  {/* This is the path to the "SiteFrame" */}
                   <Route path='/MovieSearch' component={ MovieSearch }/>
                   <Route path='/MyProfile' component={ProfilePage}/>
-                  <Redirect to="/Login" />
-                </Switch>
+                  
+                
               </SiteFrame>
             } />
           </Switch>
