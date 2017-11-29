@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
+import Carousel from '../carousel/Carousel';
 import logoICON from '../../img/goodcinemalogo.png';
 
 import './homePage.css';
 
 export default class HomePage extends Component {
+
     render() {
         return(
             <div className='fullPage'>
@@ -16,10 +18,12 @@ export default class HomePage extends Component {
                     </div>
 
                     <div className='homeForms'>
-                        <input className='inputSignIn' type='text' placeholder='Email Address' />
+                        <input className='inputSignIn' type='text' placeholder='Email Address' name='name'/>
                         <input className='inputSignIn' type='text' placeholder='Password' />
-                        <Link to='/Movie'>
-                            <button className='buttonControl' >Sign In</button>
+                        <Link to='/SiteFrame'>
+                            <button
+                            className='buttonControl'
+                            >Sign In</button>
                         </Link>
 
                         <br/><br/>
@@ -30,14 +34,14 @@ export default class HomePage extends Component {
                         <br/>
                         <input className='inputReg' type='text' placeholder='Password' />
                         <br/>
-                        <Link to='/Movie'>
+                        <Link to='/SiteFrame'>
                             <button className='buttonControl' >Sign Up</button>
                         </Link>
                     </div>
                 </div>
 
                 <div className='carouselMid'>
-                    carousel Here...
+                    <Carousel/>
                 </div>
             </div>
         );
