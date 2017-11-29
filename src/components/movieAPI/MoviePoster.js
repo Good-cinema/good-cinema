@@ -10,7 +10,9 @@ export default class MoviePoster extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:3000/api/get-movie-details')
+        const movieId = "200";
+        console.log(this.props);
+        axios.get(`http://localhost:3000/api/get-movie-details/${movieId}`)
         .then(res => {   
             this.setState({
                 movieAPI: res.data

@@ -18,22 +18,13 @@ class App extends Component {
       <Router>
         <div className="App">
           <Switch>
-            {/* This is the path to the "SimpleSlider" */}
-            <Route path='/SimpleSlider' component={ SimpleSlider }/>
-            {/* This is the path to the "Movie" */}
-            <Route path='/Movie' component={ Movie }/>
-            {/* This is the path to the "SiteFrame" */}
-            <Route path='/SiteFrame' component={ SiteFrame } />
-            <Route path='/MovieSearch' component={ MovieSearch }/>
-            <Route path='/SiteFrame' component={ SiteFrame }/>
-
-            {/* Root or Home Router should alway be place at bottom to filter
-            out bad links. "exact" is not used to improve the filter of links entered */}
-            <Route path='/' component={ HomePage } />
+            <Route path='/Login' exact={true} component={ HomePage } />
+            <Route path='/' render={(props)=>
+              <SiteFrame/>
+            } />
           </Switch>
         </div>
       </Router>
-
     );
   }
 }
