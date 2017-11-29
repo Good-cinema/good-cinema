@@ -10,12 +10,8 @@
     align-items: center;
     width: 100%;
     overflow: hidden;
-<<<<<<< HEAD
     outline: solid 1px;
     outline-color: gray;
-=======
-    overflow-y: auto;
->>>>>>> master
 }
 
 .body img {

@@ -4,8 +4,8 @@ import './../../App.css';
 import Header from './../Header/Header';
 import Footer from './../Footer/Footer';
 import Movie from '../movie/Movie';
-import LandingPage from '../Views/HomePage/HomePage';
-import MovieSearch from '../movieAPI/MovieSearch';
+import LandingPage from '../../Views/LandingPage/LandingPage';
+import MovieSearch from '../SearchResults/SearchResults';
 import ProfilePage from '../movieAPI/MovieUpcoming';
 import './SiteFrame.css';
 // import ActivityFeed from './../ActivityFeed/ActivityFeed';
@@ -20,23 +20,10 @@ class SiteFrame extends Component {
         return (
             <div>
                 <Header/>
-                  <Route path='/Landing' component={ LandingPage }/>
-                  <Route path='/MovieSearch' component={ MovieSearch }/>
-                  <Route path='/MyProfile' component={ProfilePage}/>
-                {/* <main className='container'>
-                    {this.props.children}
-<<<<<<< HEAD
-                    <div>
-                        <Movie />
-                    </div>
-                    <div className='body'>
-                        <NewMovies />
-                    </div>
-                </main> */}
-=======
+                <main className='container'>
+                {this.props.children}
                 </main>
->>>>>>> master
-                <Footer/>
+                <Footer/> 
             </div>
         );
     }

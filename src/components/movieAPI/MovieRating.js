@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import StarRatingComponent from 'react-star-rating-component';
 import "../movie/movie.css";
 
@@ -16,19 +17,12 @@ export default class MovieRating extends Component {
     }
 
     componentDidMount() {
-        fetch('https://api.themoviedb.org/3/movie/18785?api_key=c1518c5dfeb80ddb9ed594cba690acaf&language=en-US')
-        .then(response => {
-            if (!response.ok) {
-                throw Error("Network request failed")
-              }
-            return response;
-        })
-        .then(data => data.json())
-        .then(data => {    
+        axios.get(`http://localhost:8080/api/get-movie-details/${this.props.movieId}`)
+        .then(res => {   
             this.setState({
-                movieAPI: data
+                movieAPI: res.data
             })
-    }, () => {
+        }, () => {
         this.setState({
           requestFailed: true
         })
