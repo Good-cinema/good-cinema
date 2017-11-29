@@ -6,6 +6,7 @@ import MovieTitle from '../movieAPI/MovieTitle';
 import MoviePoster from '../movieAPI/MoviePoster';
 import MovieRating from '../movieAPI/MovieRating';
 import MovieAd from '../movieAPI/MovieAd';
+import MovieNew from '../movieAPI/MovieNew';
 
 export default class Movie extends Component {
     
@@ -28,6 +29,9 @@ export default class Movie extends Component {
                 </span>
                 <span className="box equalHMR marginLeft">
                     <MovieAd movieId={this.props.match.params.movieId} />
+                </span>
+                <span className="box equalHMR marginLeft">
+                    <MovieNew />
                 </span>
             </div>
         );
