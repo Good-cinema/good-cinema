@@ -7,22 +7,16 @@ import './SiteFrame.css';
 // import ActivityFeed from './../ActivityFeed/ActivityFeed';
 import NewMovies from '../movieAPI/MovieNew';
 import UpcomingMovies from '../movieAPI/MovieUpcoming';
+import '../movieAPI/moviesidebar.css';
 
 class SiteFrame extends Component {
+    
     render() {
         return (
             <div>
                 <Header/>
                 <main className='container'>
-                    <div>
-                        <Movie />
-                    </div>
-                    <div>
-                        <NewMovies />
-                    </div>
-                    <div>
-                        <UpcomingMovies />
-                    </div>
+                    {this.props.children}
                 </main>
                 <Footer/>
             </div>

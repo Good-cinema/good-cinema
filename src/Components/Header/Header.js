@@ -27,9 +27,9 @@ class Header extends Component {
                             <span className="caret"></span>
                         </button>
                         <ul className="dropdown-menu">
-                            <li><a>My profile</a></li>
+                            <li><a href="/MyProfile">My profile</a></li>
                             <li role="separator" className="divider"></li>
-                            <li><a>Sign out</a></li>
+                            <li><a href="/Login">Sign out</a></li>
                         </ul>
                     </div>
                 </div>

@@ -25,7 +25,7 @@ export default class MoviePoster extends Component {
     render() {
         if (this.state.requestFailed) return <p>Failed!</p>
         if (!this.state.movieAPI) return <p>Loading...</p>
-        var poster = 'https://image.tmdb.org/t/p/w500' + this.state.movieAPI.poster_path;
+        const poster = 'https://image.tmdb.org/t/p/w500' + this.state.movieAPI.poster_path;
         return (
             <div>
                 <span><img src={poster} style={{height: 500, width: 338}} alt='Poster'/></span>

@@ -1,12 +1,25 @@
-.body {
-    height: 500px;
-    width: 225px;
+.UpcomingMovies {
+    height: 100%;
+    width: 100%;
+    overflow-y: auto;
+    border: 2px solid black;
+    padding: 12px;
+}
+.body{
+    justify-content: center;
+    align-items: center;
+    width: 100%;
     overflow: hidden;
+    overflow-y: auto;
 }
 
 .body img {
     height: 150px;
     width: 100px;
+}
+
+.body p {
+    font-weight: bold;
 }
 
 .spanSideBar {
@@ -15,7 +28,7 @@
 
 .spanSideBar li {
     list-style: none;
-
+    margin-bottom: 10px;
 }
 
 li:nth-of-type(1n+4) {

@@ -40,13 +40,9 @@
 }
 
 .overview {
-    height: 400px;
-    display: flex;
-	flex-direction: column;
-	flex-wrap: nowrap;
-	justify-content: center;
-	align-items: stretch;
-	align-content: stretch;
+    height: auto;
+    font-size: 16px;
+    text-align: left;
 }
 
 .reviewButton {
@@ -64,6 +60,24 @@
 }
 
 .marginLeft {
-    margin-left: 2%;
+    margin-left: 5%;
     height: auto;
+}
+
+.avgBlock {
+    display: flex;
+    flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+	align-items: center;
+	align-content: stretch;
+}
+
+.starBlock {
+    display: flex;
+    flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+	align-items: center;
+	align-content: stretch;
 }

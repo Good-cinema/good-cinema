@@ -7,7 +7,7 @@ import MoviePoster from '../movieAPI/MoviePoster';
 import MovieRating from '../movieAPI/MovieRating';
 
 export default class Movie extends Component {
-
+    
     render() {
         return(
             <div className="movieBody equalHMRWrap">
@@ -28,9 +28,11 @@ export default class Movie extends Component {
                     <MovieOverview />
                 </span>
                 <span className="box equalHMR marginLeft">
-                    <img src={ require("../../img/Amazon-Instant-Video-banner.jpg") } 
-                    alt="Amazon Banner" 
-                    style={{width: 330, height: 125}} />
+                    {/* <a href="https://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Dinstant-video&field-keywords=the+hangover" target="_blank">
+                        <img src={ require("../../img/Amazon-Instant-Video-banner.jpg") } 
+                        alt="Amazon Banner" 
+                        style={{width: 330, height: 125}} />
+                    </a> */}
                 </span>
             </div>
         );

@@ -7,7 +7,6 @@ import WatchlistButton from './../watchlistButton/WatchlistButton';
 class ActivityReview extends Component{
     render(){
         return(
-
            
             <div className='flexbox ActivityReview'>
                 <div >
