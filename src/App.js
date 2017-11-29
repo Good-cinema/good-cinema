@@ -23,9 +23,7 @@ class App extends Component {
             <Route path='/' render={(props)=>
               <SiteFrame> 
                
-                  <Route path='/SimpleSlider' component={ SimpleSlider }/>
                   <Route path='/Landing' component={ LandingPage }/>
-                  <Route  exact={true} path='/Movie' component={ Movie }/>
                   <Route path='/MovieSearch' component={ MovieSearch }/>
                   <Route path='/MyProfile' component={ProfilePage}/>
                   
