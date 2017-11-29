@@ -22,12 +22,12 @@
 	flex-wrap: wrap;
 	justify-content: center;
 	align-items: center;
-	align-content: stretch;
+    align-content: stretch;
 }
 
 .logoICON {
     width: 500px;
-    height: 500px;
+    height: 300px;
 }
 
 .logoICON img {
@@ -39,7 +39,7 @@
 
 .homeForms {
     width: 500px;
-    height: 500px;
+    height: 300px;
     padding: 0px 0px 0px 0px;
     margin: 50px 0px 0px 200px;
     text-align: left;
@@ -74,4 +74,7 @@
 
 .carouselMid {
     width: 100%;
+
+    padding: 0px 0px 0px 0px;
+    margin: 80px 0px 100px 0px;
 }

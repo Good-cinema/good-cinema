@@ -22,7 +22,9 @@ class Header extends Component {
                 <div className='flex-1'>
                     <div className="btn-group">
                         <button type="button" className="btn btn-default dropdown-toggle" id='profile-btn' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Welcome, Saundra <span className="caret"></span>
+                            {/* Welcome, Saundra */}
+                            {this.props.value ? `Welcome, ${this.props.value}` : 'Login'}
+                            <span className="caret"></span>
                         </button>
                         <ul className="dropdown-menu">
                             <li><a href="/MyProfile">My profile</a></li>
