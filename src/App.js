@@ -24,8 +24,9 @@ class App extends Component {
             <Route path='/Movie' component={ Movie }/>
             {/* This is the path to the "SiteFrame" */}
             <Route path='/SiteFrame' component={ SiteFrame } />
+            {/* This is the path to the "MovieSearch" */}
             <Route path='/MovieSearch' component={ MovieSearch }/>
-            <Route path='/SiteFrame' component={ SiteFrame }/>
+            
 
             {/* Root or Home Router should alway be place at bottom to filter
             out bad links. "exact" is not used to improve the filter of links entered */}
