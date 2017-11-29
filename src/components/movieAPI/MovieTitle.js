@@ -10,7 +10,7 @@ export default class MovieTitle extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:3000/api/get-movie-details')
+        axios.get(`http://localhost:8080/api/get-movie-details/${this.props.movieId}`)
         .then(res => {   
             this.setState({
                 movieAPI: res.data
