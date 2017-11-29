@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import HomePage from './components/homePage/HomePage';
-import SimpleSlider from './components/Carousel/Carousel';
-import Movie from './components/movie/Movie';
-
 import SiteFrame from './components/SiteFrame/SiteFrame';
 import MovieSearch from './views/MovieSearch/MovieSearch.js';
 import LandingPage from './views/LandingPage/LandingPage';

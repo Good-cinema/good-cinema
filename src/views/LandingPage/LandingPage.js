@@ -1,6 +1,6 @@
 import React, { Component} from 'react';
 import ActivityFeed from  './../../components/ActivityFeed/ActivityFeed';
-import Carousel from './../../components/Carousel/Carousel';
+import Carousel from '../../../src/components/carousel/Carousel';
 import './LandingPage.css';
 import  MovieUpcoming from './../../components/movieAPI/MovieUpcoming';
 import axios from 'axios';
