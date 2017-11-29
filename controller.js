@@ -9,16 +9,20 @@ function getMovieDetails(req, res, next) {
 }
 
 function getMoviesByQuery(req, res, next) {
-    movieService.getMoviesByQuery()
+    movieService.getMoviesByQuery(req.query.query, req.query.page || 1)
     .then(data => {
         res.send(data)
+    }, err=>{
+        res.send(err.data);
     })
 }
 
 function getNewMovies(req, res, next) {
     movieService.getNewMovies()
     .then(data => {
-        res.send(data)
+        res.send(data);
+    }, err=>{
+        res.send(err);
     })
 }
 

@@ -5,7 +5,7 @@ import Slider from 'react-slick';
 import "../../../node_modules/slick-carousel/slick/slick.css";
 import "../../../node_modules/slick-carousel/slick/slick-theme.css";
 // This is the CSS I made that overrides the default CSS for certain settings.
-import "./carousel.css";
+import "./Carousel.css";
 
 // This is the slider component.
 class SimpleSlider extends Component {
@@ -21,32 +21,20 @@ class SimpleSlider extends Component {
       dots: true,
       infinite: true,
       speed: 500,
-      slidesToShow: 5,
+      slidesToShow: this.props.slides || 5,
       slidesToScroll: 1,
     };
     return (
       // This is where the slider and the settings themselves are initiated along with the actual slides.
       <Slider {...settings}>
-        <div className="fpmain">
-          <img src={ require("../../img/ptposter.jpg") } 
-          alt="PT Poster" />
-        </div>
-        <div className="fpmain">
-          <img src={ require("../../img/ramboposter.jpg") } 
-          alt="Rambo Poster" />
-        </div>
-        <div className="fpmain">
-          <img src={ require("../../img/avengersposter.jpg") } 
-          alt="Avengers Poster" />
-        </div>
-        <div className="fpmain">
-          <img src={ require("../../img/swposter.jpg") } 
-          alt="SW Poster" />
-        </div>
-        <div className="fpmain">
-          <img src={ require("../../img/jumanjiposter.jpg") } 
-          alt="Jumanji Poster" />
-        </div>
+        {
+          (this.props.movies||[]).map(movie=>
+            <div className="fpmain">
+              <img src={ 'https://image.tmdb.org/t/p/w500' + movie.poster_path }
+                alt={movie.original_title} />
+            </div>
+          )
+        }
       </Slider>
     );
   }

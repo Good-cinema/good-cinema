@@ -1,0 +1,14 @@
+.SearchResults  {
+    box-shadow: 0px 3px 7px -5px #afafaf;
+    padding: 5px;
+    width: 100%;
+    margin:10px;
+    
+    
+}
+
+.title{
+    text-align: left;
+    padding: 10px;
+}
+

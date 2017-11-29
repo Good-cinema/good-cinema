@@ -1,13 +1,21 @@
-.body {
-    display: flex;
+.UpcomingMovies {
+    height: 100%;
+    width: 100%;
+    overflow-y: auto;
+    border: 2px solid black;
+    padding: 12px;
+}
+.body{
     justify-content: center;
     align-items: center;
-    height: 100%;
-    width: auto;
-    min-width: 225px;
+    width: 100%;
     overflow: hidden;
+<<<<<<< HEAD
     outline: solid 1px;
     outline-color: gray;
+=======
+    overflow-y: auto;
+>>>>>>> master
 }
 
 .body img {

@@ -25,6 +25,7 @@ class SiteFrame extends Component {
                   <Route path='/MyProfile' component={ProfilePage}/>
                 {/* <main className='container'>
                     {this.props.children}
+<<<<<<< HEAD
                     <div>
                         <Movie />
                     </div>
@@ -32,6 +33,9 @@ class SiteFrame extends Component {
                         <NewMovies />
                     </div>
                 </main> */}
+=======
+                </main>
+>>>>>>> master
                 <Footer/>
             </div>
         );
