@@ -13,7 +13,7 @@ class SimpleSlider extends Component {
     // This is where you add the settings for the slider itself. There are many options.
     var settings = {
       accessibility: true,
-      arrows: false,
+      arrows: true,
       autoplay: true,
       autoplaySpeed: 5000,
       centerMode: true,
