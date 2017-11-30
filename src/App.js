@@ -6,7 +6,7 @@ import Movie from './components/movie/Movie';
 
 import SiteFrame from './components/SiteFrame/SiteFrame';
 import MovieSearch from './Views/MovieSearch/MovieSearch.js';
-import LandingPage from './Views/LandingPage/LandingPage';
+import LandingPage from '../src/views/LandingPage/LandingPage';
 import ProfilePage from './Views/ProfilePage/ProfilePage'
 // import HomePage from './Views/HomePage/HomePage';
 
