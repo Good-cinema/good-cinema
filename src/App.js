@@ -23,10 +23,7 @@ class App extends Component {
               <SiteFrame> 
                
                   <Route path='/Landing' component={ LandingPage }/>
-<<<<<<< HEAD
-=======
                   <Route path='/Movie/:movieId' component={ Movie }/>
->>>>>>> nick
                   <Route path='/MovieSearch' component={ MovieSearch }/>
                   <Route path='/MyProfile' component={ ProfilePage }/>
                      
