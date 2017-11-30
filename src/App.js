@@ -2,10 +2,12 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import HomePage from './components/homePage/HomePage';
+import Movie from './components/movie/Movie';
+
 import SiteFrame from './components/SiteFrame/SiteFrame';
-import MovieSearch from './views/MovieSearch/MovieSearch.js';
-import LandingPage from './views/LandingPage/LandingPage';
-import ProfilePage from './views/ProfilePage/ProfilePage'
+import MovieSearch from './Views/MovieSearch/MovieSearch.js';
+import LandingPage from './Views/LandingPage/LandingPage';
+import ProfilePage from './Views/ProfilePage/ProfilePage'
 // import HomePage from './Views/HomePage/HomePage';
 
 import './App.css';
@@ -21,10 +23,13 @@ class App extends Component {
               <SiteFrame> 
                
                   <Route path='/Landing' component={ LandingPage }/>
+<<<<<<< HEAD
+=======
+                  <Route path='/Movie/:movieId' component={ Movie }/>
+>>>>>>> nick
                   <Route path='/MovieSearch' component={ MovieSearch }/>
-                  <Route path='/MyProfile' component={ProfilePage}/>
-                  
-                
+                  <Route path='/MyProfile' component={ ProfilePage }/>
+                     
               </SiteFrame>
             } />
           </Switch>

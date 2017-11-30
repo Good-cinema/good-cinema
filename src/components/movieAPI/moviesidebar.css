@@ -10,7 +10,8 @@
     align-items: center;
     width: 100%;
     overflow: hidden;
-    overflow-y: auto;
+    outline: solid 1px;
+    outline-color: gray;
 }
 
 .body img {

@@ -1,7 +1,8 @@
 const movieService = require('./movieService');
 
 function getMovieDetails(req, res, next) {
-    movieService.getMovieDetails()
+    console.log(req.params.movieId);
+    movieService.getMovieDetails(req.params.movieId)
     .then(data => {
         res.send(data)
     })

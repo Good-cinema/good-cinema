@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-import './moviesidebar.css';
+import '../movie/movie.css';
 
-export default class NewMovies extends Component {
+export default class MovieAd extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -12,7 +12,7 @@ export default class NewMovies extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:3000/api/get-new-movies')
+        axios.get('http://localhost:3000/api/get-movie-details')
         .then(res => {   
             this.setState({
                 movieAPI: res.data
@@ -27,21 +27,17 @@ export default class NewMovies extends Component {
     render() {
         if (this.state.requestFailed) return <p>Failed!</p>
         if (!this.state.movieAPI) return <p>Loading...</p>
-        var results = this.state.movieAPI.results;
-        var listItems = results.map((result) =>
-            <li> <a href="../SiteFrame"><img src={'https://image.tmdb.org/t/p/w500' + result.poster_path} alt='Poster'/></a> <br/> <b>{result.title}</b> {result.release_date}</li>
-         );
+        const title = this.state.movieAPI.original_title;
+        const movieLink = "https://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Dinstant-video&field-keywords=" + title;
         return (
             <div className="body">
-                <span className="spanSideBar"><p>New Releases</p>{listItems}</span>
+                <a href={movieLink} target="_blank">
+                    <img src={ require("../../img/Amazon-Instant-Video-banner.jpg") } 
+                    alt="Amazon Banner" 
+                    style={{width: 330, height: 125}} />
+                </a>
             </div>
         )
     }
 }
-
-
-
-
-
-
-
+    

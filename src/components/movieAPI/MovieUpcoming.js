@@ -40,7 +40,4 @@ export default class UpcomingMovies extends Component {
             </div>
         )
     }
-
-
-
 }
