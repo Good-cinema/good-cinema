@@ -4,10 +4,10 @@ import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-d
 import HomePage from './components/homePage/HomePage';
 import Movie from './components/movie/Movie';
 
-import SiteFrame from './components/SiteFrame/SiteFrame';
-import MovieSearch from './Views/MovieSearch/MovieSearch.js';
-import LandingPage from './Views/LandingPage/LandingPage';
-import ProfilePage from './Views/ProfilePage/ProfilePage'
+import SiteFrame from './components/siteFrame/SiteFrame';
+import MovieSearch from './views/movieSearch/MovieSearch.js';
+import LandingPage from './views/landingPage/LandingPage';
+import ProfilePage from './views/profilePage/ProfilePage'
 // import HomePage from './Views/HomePage/HomePage';
 
 import './App.css';

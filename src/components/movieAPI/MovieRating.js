@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import StarRatingComponent from 'react-star-rating-component';
-import "../Movie/Movie.css";
+import "../movie/movie.css";
 
 export default class MovieRating extends Component {
     constructor() {
