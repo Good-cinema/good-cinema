@@ -12,7 +12,9 @@ export default class UpcomingMovies extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:8080/api/get-upcoming-movies')
+        axios.get('http://localhost:8080/api/get-upcoming-movies',{
+            params: { count: this.props.movieCount || 10 }
+        })
         .then(res => {   
             this.setState({
                 movieAPI: res.data
