@@ -12,7 +12,7 @@ export default class NewMovies extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:3000/api/get-new-movies')
+        axios.get('http://localhost:8080/api/get-new-movies')
         .then(res => {   
             this.setState({
                 movieAPI: res.data
