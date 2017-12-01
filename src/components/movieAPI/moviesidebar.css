@@ -8,9 +8,10 @@
 .body{
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 250px;
     overflow: hidden;
-    overflow-y: auto;
+    outline: solid 1px;
+    outline-color: gray;
 }
 
 .body img {
@@ -20,6 +21,7 @@
 
 .body p {
     font-weight: bold;
+    margin-top: 5px;
 }
 
 .spanSideBar {

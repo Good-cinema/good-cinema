@@ -1,13 +1,18 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './../../App.css';
 import Header from './../Header/Header';
 import Footer from './../Footer/Footer';
 import Movie from '../movie/Movie';
+import LandingPage from '../../Views/LandingPage/LandingPage';
+import MovieSearch from '../SearchResults/SearchResults';
+import ProfilePage from '../movieAPI/MovieUpcoming';
 import './SiteFrame.css';
 // import ActivityFeed from './../ActivityFeed/ActivityFeed';
 import NewMovies from '../movieAPI/MovieNew';
 import UpcomingMovies from '../movieAPI/MovieUpcoming';
 import '../movieAPI/moviesidebar.css';
+
 
 class SiteFrame extends Component {
     
@@ -16,9 +21,9 @@ class SiteFrame extends Component {
             <div>
                 <Header/>
                 <main className='container'>
-                    {this.props.children}
+                {this.props.children}
                 </main>
-                <Footer/>
+                <Footer/> 
             </div>
         );
     }

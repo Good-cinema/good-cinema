@@ -10,6 +10,12 @@
 }
 
 .avgBlock {
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-items: center;
+    align-content: stretch;
     height: 35px;
-    width: 150px;
+    width: 200px;
 }
