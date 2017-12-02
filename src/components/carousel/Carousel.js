@@ -6,7 +6,6 @@ import "../../../node_modules/slick-carousel/slick/slick.css";
 import "../../../node_modules/slick-carousel/slick/slick-theme.css";
 // This is the CSS I made that overrides the default CSS for certain settings.
 import "./carousel.css";
-
 // This is the slider component.
 class SimpleSlider extends Component {
   render() {
@@ -39,5 +38,4 @@ class SimpleSlider extends Component {
     );
   }
 }
-
 export default SimpleSlider;
