@@ -20,7 +20,7 @@ export default class HomePage extends Component {
                     <div className='homeForms'>
                         <input className='inputSignIn' type='text' placeholder='Email Address' name='name'/>
                         <input className='inputSignIn' type='text' placeholder='Password' />
-                        <Link to='/SiteFrame'>
+                        <Link to='/Landing'>
                             <button
                             className='buttonControl'
                             >Sign In</button>
@@ -34,7 +34,7 @@ export default class HomePage extends Component {
                         <br/>
                         <input className='inputReg' type='text' placeholder='Password' />
                         <br/>
-                        <Link to='/SiteFrame'>
+                        <Link to='/Landing'>
                             <button className='buttonControl' >Sign Up</button>
                         </Link>
                     </div>

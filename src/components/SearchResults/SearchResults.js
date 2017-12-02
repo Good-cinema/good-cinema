@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import WatchlistButton from './../watchlistButton/WatchlistButton';
 import axios from 'axios';
-import './searchresults.css';
+import './searchResults.css';
 
 export default class SearchResults extends Component {
 

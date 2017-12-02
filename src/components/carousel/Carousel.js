@@ -29,8 +29,8 @@ class SimpleSlider extends Component {
         {
           (this.props.movies||[]).map(movie=>
             <div className="fpmain">
-              <img src={ 'https://image.tmdb.org/t/p/w500' + movie.poster_path }
-                alt={movie.original_title} />
+            <a href={'../Movie/' + movie.id}><img src={ 'https://image.tmdb.org/t/p/w500' + movie.poster_path }
+                alt={movie.original_title} /></a>
             </div>
           )
         }
