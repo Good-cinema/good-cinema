@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-
 import './moviesidebar.css';
-
 export default class UpcomingMovies extends Component {
     constructor(props) {
         super(props);
@@ -10,7 +8,6 @@ export default class UpcomingMovies extends Component {
             requestFailed: false
         };
     }
-
     componentDidMount() {
         axios.get('http://localhost:8080/api/get-upcoming-movies',{
             params: { count: this.props.movieCount || 10 }
@@ -25,7 +22,6 @@ export default class UpcomingMovies extends Component {
         })
       })
     }
-
     render() {
         if (this.state.requestFailed) return <p>Failed!</p>
         if (!this.state.movieAPI) return <p>Loading...</p>

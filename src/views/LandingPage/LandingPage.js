@@ -21,7 +21,6 @@ class LandingPage extends Component{
         });
     }
     render(){
-        console.log(this.props.match.params)
         return(
             <div>
                 <div className='padding-lg'>
