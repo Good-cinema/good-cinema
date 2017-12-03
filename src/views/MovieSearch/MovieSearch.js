@@ -3,6 +3,8 @@ import axios from 'axios';
 import SearchResults from './../../components/SearchResults/SearchResults';
 import './MovieSearch.css';
 import MovieUpcoming from './../../components/movieAPI/MovieUpcoming'
+import queryString from 'query-string';
+import { Link } from 'react-router-dom';
 
 export default class MovieSearch extends Component {
     constructor(props) {
@@ -15,27 +17,61 @@ export default class MovieSearch extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:8080/api/get-movies-by-query?query=star wars')
-            .then(res => {
-                this.setState(res.data)
-            },
-            () => {
-                this.setState({ requestFailed: true })
-            })
+        var query = queryString.parse(this.props.location.search);
+        this.setState({ query: query.query });
+        this.loadResults(query);
+    }
+    loadResults({page, query}) {
+        axios.get('http://localhost:8080/api/get-movies-by-query',{
+            params:{ query: query, page: page || 1 }
+        })
+        .then(res => {
+            this.setState(res.data)
+            this.refs.results.scrollTop = 0;
+        },
+        () => {
+            this.setState({ requestFailed: true })
+        })
+    }
+    previousPage(){
+        this.loadResults({ query: this.state.query, page: this.state.page - 1})
+    }
+    nextPage(){
+        this.loadResults({ query: this.state.query, page:this.state.page + 1})
     }
 
     render() {
         return (
             <div className='flexbox padding-lg'>
-
-                <div className='flexgrow-2 padding-lg search-results'>
+                <div className='flexgrow-2 padding-lg'>
+                    <div ref='results' className="search-results">
                     {
                         this.state.results.map(
-                            r => <SearchResults result={r} />
+                            r => <SearchResults key={r.id} result={r} />
                         )
                     }
+                    </div>
+                    <div>
+                    {
+                        this.state.page > 1 ?
+                            <Link to={`/MovieSearch?query=${this.state.query}&page=${this.state.page-1}`} onClick={()=>this.previousPage()}>
+                            &lt;&lt; Previous Page
+                            </Link> :
+                            null
+                    }
+                    &nbsp;
+                    &nbsp;
+                    &nbsp;
+                    {
+                        this.state.total_pages > this.state.page ?
+                            <Link to={`/MovieSearch?query=${this.state.query}&page=${this.state.page+1}`} onClick={()=>this.nextPage()}>
+                            Next Page &gt;&gt;
+                            </Link> :
+                            null
+                    }
+                    </div>
                 </div>
-                <div className='flexgrow-1 padding-lg'>
+                <div className='flexgrow-1 padding-lg movie-search-side-bar'>
                     <MovieUpcoming />
                 </div>
             </div>

@@ -10,6 +10,8 @@ class Header extends Component {
             <div className='Header flexbox'>
                 <div className='logo'>
                     <img className='center-block' width='50' height='50' src={Logo} alt='Logo'></img>
+                    <a href="/Landing"></a>
+                    
                 </div>
                 <div className='flex-2'>
                     <div className="input-group add-on ">
@@ -23,7 +25,7 @@ class Header extends Component {
                     <div className="btn-group">
                         <button type="button" className="btn btn-default dropdown-toggle" id='profile-btn' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             {/* Welcome, Saundra */}
-                            {this.props.value ? `Welcome, ${this.props.value}` : 'Login'}
+                            {this.props.value ? `Welcome, ${this.props.value}` : 'My Account'}
                             <span className="caret"></span>
                         </button>
                         <ul className="dropdown-menu">

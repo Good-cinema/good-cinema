@@ -31,13 +31,16 @@ export default class UpcomingMovies extends Component {
         if (!this.state.movieAPI) return <p>Loading...</p>
         var results = this.state.movieAPI.results;
         var listItems = results.map((result) =>
-            <div> <a href={'../Movie/' + result.id}><img src={'https://image.tmdb.org/t/p/w500' + result.poster_path} alt="images"/></a> <br/> {result.title} {result.release_date}</div>
-         );
+
+        <li> <a href={'../Movie/' + result.id}><img src={'https://image.tmdb.org/t/p/w500' + result.poster_path} alt='Poster'/></a> <br/> <b>{result.title}</b><br/> {result.release_date}</li>
+    );
+            //<div key={result.id}> <a href={'../Movie/' + result.id}><img src={'https://image.tmdb.org/t/p/w500' + result.poster_path} alt="images"/></a> <br/> {result.title} {result.release_date}</div>//
+         //);
         return (
-            <div className="UpcomingMovies">
+            <div className="spanSideBar">
                 <div className="body">
                     {/*<span className="spanSideBar">{listItems}</span>*/}
-                    {listItems}
+                    <p>Upcomimg Releases</p>{listItems}
                 </div>
             </div>
         )
