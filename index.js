@@ -20,7 +20,7 @@ massive( process.env.CONNECTION_STRING )
         console.error(error)
     });
 
-app.get('/api/get-movie-details', controller.getMovieDetails);
+app.get('/api/get-movie-details/:movieId', controller.getMovieDetails);
 app.get('/api/get-movies-by-query', controller.getMoviesByQuery);
 app.get('/api/get-new-movies', controller.getNewMovies);
 app.get('/api/get-upcoming-movies', controller.getUpcomingMovies);
