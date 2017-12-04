@@ -12,7 +12,7 @@ export default class MovieAd extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:3000/api/get-movie-details')
+        axios.get(`http://localhost:8080/api/get-movie-details/${this.props.movieId}`)
         .then(res => {   
             this.setState({
                 movieAPI: res.data
@@ -30,11 +30,10 @@ export default class MovieAd extends Component {
         const title = this.state.movieAPI.original_title;
         const movieLink = "https://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Dinstant-video&field-keywords=" + title;
         return (
-            <div className="body">
+            <div id="imgSize">
                 <a href={movieLink} target="_blank">
                     <img src={ require("../../img/Amazon-Instant-Video-banner.jpg") } 
-                    alt="Amazon Banner" 
-                    style={{width: 330, height: 125}} />
+                    alt="Amazon Banner" />
                 </a>
             </div>
         )

@@ -35,15 +35,13 @@ export default class MovieRating extends Component {
         if (!this.state.movieAPI) return <p>Loading...</p>
         return (
             <div>
-                <span className="avgBlock" style={{ fontSize: 28 }}><StarRatingComponent value={this.state.movieAPI.vote_average/2} starColor={'gray'} editing={false}  /> Avg Rating</span>
-                <span className="starBlock" style={{ fontSize: 34}}>
+                <span className="avgBlock" style={{ fontSize: 24 }}>
                     <StarRatingComponent 
-                            name="rate1" 
-                            starCount={5}
-                            value={rating}
-                            onStarClick={this.onStarClick.bind(this)}
-                        />
-                    <button className="reviewButton">Review</button>
+                        value={this.state.movieAPI.vote_average/2} 
+                        starColor={'red'} 
+                        editing={false}  
+                    />
+                    <p style={{ fontSize: 18, margin: 0 }}>User Rating</p>
                 </span>
             </div>
         )

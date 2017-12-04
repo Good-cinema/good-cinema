@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-import Carousel from '../carousel/Carousel';
+import Carousel from '../homePageCarousel/HomePageCarousel';
 import logoICON from '../../img/goodcinemalogo.png';
 
 import './homePage.css';
@@ -11,7 +11,7 @@ export default class HomePage extends Component {
     render() {
         return(
             <div className='fullPage'>
-                <div className='homePageTopPageBckGrnd'>
+                <div className='homePageTopPageBckGrnd content'>
 
                     <div className='logoICON'>
                         <img src={ logoICON } alt='logo' />
@@ -20,7 +20,7 @@ export default class HomePage extends Component {
                     <div className='homeForms'>
                         <input className='inputSignIn' type='text' placeholder='Email Address' name='name'/>
                         <input className='inputSignIn' type='text' placeholder='Password' />
-                        <Link to='/SiteFrame'>
+                        <Link to='/Landing'>
                             <button
                             className='buttonControl'
                             >Sign In</button>
@@ -34,14 +34,14 @@ export default class HomePage extends Component {
                         <br/>
                         <input className='inputReg' type='text' placeholder='Password' />
                         <br/>
-                        <Link to='/SiteFrame'>
+                        <Link to='/Landing'>
                             <button className='buttonControl' >Sign Up</button>
                         </Link>
                     </div>
                 </div>
 
                 <div className='carouselMid'>
-                    <Carousel/>
+                    <Carousel />
                 </div>
             </div>
         );

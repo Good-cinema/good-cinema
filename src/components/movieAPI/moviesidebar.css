@@ -1,14 +1,7 @@
-.UpcomingMovies {
-    height: 100%;
-    width: 100%;
-    overflow-y: auto;
-    border: 2px solid black;
-    padding: 12px;
-}
 .body{
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 250px;
     overflow: hidden;
     outline: solid 1px;
     outline-color: gray;
@@ -21,6 +14,7 @@
 
 .body p {
     font-weight: bold;
+    margin-top: 5px;
 }
 
 .spanSideBar {
