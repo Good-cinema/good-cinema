@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import SearchResults from './../../components/searchResults/SearchResults';
-import './movieSearch.css';
+import SearchResults from './../../components/SearchResults/SearchResults';
+import './MovieSearch.css';
 
 export default class MovieSearch extends Component {
     constructor(props) {

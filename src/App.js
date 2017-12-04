@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import HomePage from './components/homePage/HomePage';
+import HomePage from '../src/views/homePage/HomePage';
 import Movie from './components/movie/Movie';
 
-import SiteFrame from './components/siteFrame/SiteFrame';
-import MovieSearch from './views/movieSearch/MovieSearch.js';
-import LandingPage from './views/landingPage/LandingPage';
-import ProfilePage from './views/profilePage/ProfilePage'
+import SiteFrame from '../src/components/SiteFrame/SiteFrame';
+import MovieSearch from './views/MovieSearch/MovieSearch.js';
+import LandingPage from './views/LandingPage/LandingPage';
+import ProfilePage from './views/ProfilePage/ProfilePage'
 // import HomePage from './Views/HomePage/HomePage';
 
 import './App.css';

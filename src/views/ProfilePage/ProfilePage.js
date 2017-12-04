@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './profilePage.css';
+import './ProfilePage.css';
 
 class ProfilePage extends Component {
     render() {
