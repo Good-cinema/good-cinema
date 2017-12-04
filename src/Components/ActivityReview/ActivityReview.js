@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import './ActivityReview.css';
+import './activityReview.css';
 import StarRatingComponent from 'react-star-rating-component';
 import WatchlistButton from './../watchlistButton/WatchlistButton';
 
