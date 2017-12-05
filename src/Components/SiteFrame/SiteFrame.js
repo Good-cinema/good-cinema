@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './../../App.css';
-import Header from './../Header/Header';
-import Footer from './../Footer/Footer';
-import './SiteFrame.css';
+import Header from './../header/Header';
+import Footer from './../footer/Footer';
+import './siteFrame.css';
 
 
 class SiteFrame extends Component {

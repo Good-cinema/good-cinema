@@ -37,9 +37,40 @@ function getUpcomingMovies(req, res, next) {
     })
 }
 
+function getUser(req, res, next) {
+    req.app.get('db').getUser(req.params.userId)
+    .then(user=>{
+        res.send(user);
+    })
+    .catch(err=>{
+        res.status(400).send(err);
+    })
+}
+function getUserByEmail(req, res, next) {
+    req.app.get('db').getUserByEmail(req.query.email)
+    .then(user=>{
+        res.send(user);
+    })
+    .catch(err=>{
+        res.status(400).send(err);
+    })
+}
+function createUser(req, res, next) {
+    req.app.get('db').createUser(req.body)
+    .then(user=>{
+        res.status(201).send(user);
+    })
+    .catch(err=>{
+        res.status(400).send(err);
+    })
+}
+
 module.exports = {
     getMovieDetails: getMovieDetails,
     getMoviesByQuery: getMoviesByQuery,
     getNewMovies: getNewMovies,
-    getUpcomingMovies: getUpcomingMovies
+    getUpcomingMovies: getUpcomingMovies,
+    getUser: getUser,
+    getUserByEmail: getUserByEmail,
+    createUser: createUser
 }
