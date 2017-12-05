@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import './ProfilePage.css';
+import './profilePage.css';
+
+
 
 class ProfilePage extends Component {
     render() {
@@ -7,12 +9,10 @@ class ProfilePage extends Component {
            
                  <div className='Profile'>
                     <div>
-                        my pernoal reviews
-                        my pernoal reviews
-                        my pernoal reviews
-                        my pernoal reviews
+                        best movie ever
+                        best movie ever
                     </div>
-                <div className='divider'></div>
+                <div className='Profile-divider'></div>
                     <div>
                         watch list goes here
                         watch list goes here

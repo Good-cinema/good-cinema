@@ -27,7 +27,8 @@ export default class UpcomingMovies extends Component {
         if (!this.state.movieAPI) return <p>Loading...</p>
         var results = this.state.movieAPI.results;
         var listItems = results.map((result) =>
-        <li> <a href={'../Movie/' + result.id}><img src={'https://image.tmdb.org/t/p/w500' + result.poster_path} alt='Poster'/></a> <br/> <b>{result.title}</b><br/> {result.release_date}</li>
+
+        <li> <a href={'../Movie/' + result.id}><img src={'https://image.tmdb.org/t/p/w154' + result.poster_path} alt='Poster'/></a> <br/> <b>{result.title}</b><br/> {result.release_date}</li>
     );
             //<div key={result.id}> <a href={'../Movie/' + result.id}><img src={'https://image.tmdb.org/t/p/w500' + result.poster_path} alt="images"/></a> <br/> {result.title} {result.release_date}</div>//
          //);

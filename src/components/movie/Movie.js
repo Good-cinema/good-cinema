@@ -7,7 +7,7 @@ import MoviePoster from '../movieAPI/MoviePoster';
 import MovieRating from '../movieAPI/MovieRating';
 import MovieAd from '../movieAPI/MovieAd';
 import MovieNew from '../movieAPI/MovieNew';
-import UserMovieRating from '../movieAPI/UserMovieRating';
+import UserMovieRating from '../movieAPI/MovieRating';
 
 export default class Movie extends Component {
     
