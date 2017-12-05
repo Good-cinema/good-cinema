@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import './../../App.css';
-import './header.css';
+import './Header.css';
 import Logo from './../../img/logo-01.svg';
 import queryString from 'query-string';
 
