@@ -9,10 +9,10 @@ class SiteFrame extends Component {
     
     render() {
         return (
-            <div>
-                <Header/>
-                <main className='container'>
-                {this.props.children}
+            <div className="SiteFrame">
+                <Header history={this.props.history}/>
+                <main className="container">
+                    {this.props.children}
                 </main>
                 <Footer/> 
             </div>

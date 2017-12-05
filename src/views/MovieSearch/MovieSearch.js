@@ -20,6 +20,13 @@ export default class MovieSearch extends Component {
         var query = queryString.parse(this.props.location.search);
         this.setState({ query: query.query });
         this.loadResults(query);
+        this.props.history.listen( location =>  {
+            //
+            // reloads the search results when the path changes
+            //
+            var query = queryString.parse(location.search);
+            this.loadResults(query);
+        });
     }
     loadResults({page, query}) {
         axios.get('http://localhost:8080/api/get-movies-by-query',{
@@ -32,12 +39,6 @@ export default class MovieSearch extends Component {
         () => {
             this.setState({ requestFailed: true })
         })
-    }
-    previousPage(){
-        this.loadResults({ query: this.state.query, page: this.state.page - 1})
-    }
-    nextPage(){
-        this.loadResults({ query: this.state.query, page:this.state.page + 1})
     }
 
     render() {
@@ -54,7 +55,7 @@ export default class MovieSearch extends Component {
                     <div>
                     {
                         this.state.page > 1 ?
-                            <Link to={`/MovieSearch?query=${this.state.query}&page=${this.state.page-1}`} onClick={()=>this.previousPage()}>
+                            <Link to={`/MovieSearch?query=${this.state.query}&page=${this.state.page-1}`}>
                             &lt;&lt; Previous Page
                             </Link> :
                             null
@@ -64,7 +65,7 @@ export default class MovieSearch extends Component {
                     &nbsp;
                     {
                         this.state.total_pages > this.state.page ?
-                            <Link to={`/MovieSearch?query=${this.state.query}&page=${this.state.page+1}`} onClick={()=>this.nextPage()}>
+                            <Link to={`/MovieSearch?query=${this.state.query}&page=${this.state.page+1}`}>
                             Next Page &gt;&gt;
                             </Link> :
                             null

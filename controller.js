@@ -5,6 +5,8 @@ function getMovieDetails(req, res, next) {
     movieService.getMovieDetails(req.params.movieId)
     .then(data => {
         res.send(data)
+    }, err=>{
+        res.status(400).send(err);
     })
 }
 
@@ -13,7 +15,7 @@ function getMoviesByQuery(req, res, next) {
     .then(data => {
         res.send(data)
     }, err=>{
-        res.send(err.data);
+        res.status(400).send(err);
     })
 }
 
@@ -22,7 +24,7 @@ function getNewMovies(req, res, next) {
     .then(data => {
         res.send(data);
     }, err=>{
-        res.send(err);
+        res.status(400).send(err);
     })
 }
 
@@ -30,6 +32,8 @@ function getUpcomingMovies(req, res, next) {
     movieService.getUpcomingMovies()
     .then(data => {
         res.send(data)
+    }, err=>{
+        res.status(400).send(err);
     })
 }
 

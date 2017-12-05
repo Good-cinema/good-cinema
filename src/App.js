@@ -20,7 +20,7 @@ class App extends Component {
           <Switch>
             <Route path='/Login' exact={true} component={ HomePage } />
             <Route path='/' render={(props)=>
-              <SiteFrame> 
+              <SiteFrame history={props.history/*This code allows me to redirect to the search results when using the search box in the header*/}> 
                
                   <Route path='/Landing' component={ LandingPage }/>
                   <Route path='/Movie/:movieId' component={ Movie }/>
