@@ -6,7 +6,6 @@ import "../../../node_modules/slick-carousel/slick/slick.css";
 import "../../../node_modules/slick-carousel/slick/slick-theme.css";
 // This is the CSS I made that overrides the default CSS for certain settings.
 import "./carousel.css";
-
 // This is the slider component.
 class SimpleSlider extends Component {
   render() {
@@ -29,9 +28,9 @@ class SimpleSlider extends Component {
       <Slider {...settings}>
         {
           (this.props.movies||[]).map(movie=>
-            <div className="fpmain">
-              <img src={ 'https://image.tmdb.org/t/p/w500' + movie.poster_path }
-                alt={movie.original_title} />
+            <div className="carousel-image">
+              <a href={'../Movie/' + movie.id}><img src={ 'https://image.tmdb.org/t/p/w342' + movie.poster_path }
+                alt={movie.original_title} /></a>
             </div>
           )
         }
@@ -39,5 +38,4 @@ class SimpleSlider extends Component {
     );
   }
 }
-
 export default SimpleSlider;

@@ -3,5 +3,9 @@
 }
 
 .landing-area{
-    height: 500px;
+}
+
+.imgSize {
+    width: 200px;
+    height: 300px;
 }

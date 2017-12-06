@@ -1,7 +1,7 @@
 import React, { Component} from 'react';
-import ActivityFeed from  './../../components/ActivityFeed/ActivityFeed';
+import ActivityFeed from  './../../components/activityFeed/ActivityFeed';
 import Carousel from '../../components/carousel/Carousel';
-import './LandingPage.css';
+import './landingPage.css';
 import  MovieUpcoming from './../../components/movieAPI/MovieUpcoming';
 import axios from 'axios';
 
@@ -21,7 +21,6 @@ class LandingPage extends Component{
         });
     }
     render(){
-        console.log(this.props.match.params)
         return(
             <div>
                 <div className='padding-lg'>

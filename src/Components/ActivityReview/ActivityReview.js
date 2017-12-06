@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import './ActivityReview.css';
+import './activityReview.css';
 import StarRatingComponent from 'react-star-rating-component';
 import WatchlistButton from './../watchlistButton/WatchlistButton';
 
@@ -10,10 +10,10 @@ class ActivityReview extends Component{
            
             <div className='flexbox ActivityReview'>
                 <div >
-                    <img src={this.props.review.poster_url} width='50'></img>
+                    <img src={this.props.review.poster_url} alt='Preview' width='50'></img>
                 </div>
                 <div className='padding'>
-                    <img className='circle' src={this.props.review.profile_url} width='40' height='40'></img>
+                    <img className='circle' src={this.props.review.profile_url} alt='Preview' width='40' height='40'></img>
                 </div>
                 <div className='flex-grow-1 flexbox-col'>
                     <div><StarRatingComponent
