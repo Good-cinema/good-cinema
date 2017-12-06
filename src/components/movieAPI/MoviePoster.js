@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
+import './moviePoster.css';
+
 export default class MoviePoster extends Component {
     constructor(props) {
         super(props);
@@ -28,7 +30,7 @@ export default class MoviePoster extends Component {
         const poster = 'https://image.tmdb.org/t/p/w500' + this.state.movieAPI.poster_path;
         return (
             <div>
-                <span><img src={poster} style={{height: 500, width: 338}} alt='Poster'/></span>
+                <span><img className="leftAlign" src={poster} style={{height: 500, width: 338}} alt='Poster'/></span>
             </div>
         )
     }

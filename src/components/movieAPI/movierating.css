@@ -1,21 +1,25 @@
-.starBlock {
-    display: flex;
-	flex-direction: row;
-	flex-wrap: nowrap;
-	justify-content: space-between;
-	align-items: center;
-    align-content: stretch;
-    height: 35px;
-    width: 200px;
-}
-
 .avgBlock {
     display: flex;
 	flex-direction: row;
 	flex-wrap: nowrap;
-	justify-content: space-between;
-	align-items: center;
+	justify-content: flex-start;
+	align-items: flex-end;
     align-content: stretch;
     height: 35px;
     width: 200px;
+    font-size: 24px;
+    margin-top: 20px;
+}
+
+.avgBlock p {
+    font-size: 15px;
+    margin-left: 10px;
+    font-weight: bold;
+    display: flex;
+    align-self: flex-end;
+}
+
+.item {
+    display: flex;
+    flex: grow; 
 }

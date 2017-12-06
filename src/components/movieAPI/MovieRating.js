@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import StarRatingComponent from 'react-star-rating-component';
 import "../movie/movie.css";
+import './movierating.css';
 
 export default class MovieRating extends Component {
     constructor() {
@@ -35,13 +36,15 @@ export default class MovieRating extends Component {
         if (!this.state.movieAPI) return <p>Loading...</p>
         return (
             <div>
-                <span className="avgBlock" style={{ fontSize: 24 }}>
-                    <StarRatingComponent 
-                        value={this.state.movieAPI.vote_average/2} 
-                        starColor={'red'} 
-                        editing={false}  
-                    />
-                    <p style={{ fontSize: 18, margin: 0 }}>User Rating</p>
+                <span className="avgBlock">
+                    <div className="item">
+                        <StarRatingComponent 
+                            value={this.state.movieAPI.vote_average/2} 
+                            starColor={'red'} 
+                            editing={false}  
+                        />
+                        <p>User Rating</p>
+                    </div>
                 </span>
             </div>
         )
