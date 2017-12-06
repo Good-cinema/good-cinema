@@ -9,6 +9,7 @@
     "massive": "^4.5.0",
     "nodemon": "^1.12.1",
     "pg": "^7.4.0",
+    "query-string": "^5.0.1",
     "react": "^16.1.0",
     "react-dom": "^16.1.0",
     "react-router-dom": "^4.2.2",
