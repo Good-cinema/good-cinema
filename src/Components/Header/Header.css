@@ -4,8 +4,12 @@
 	flex-direction: row;
 	flex-wrap: nowrap;
 	justify-content: center;
-	align-content: center
-    
+	align-content: center;
+    width: 100vw;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 999;
 }
 
 .logo{
@@ -26,9 +30,8 @@
 
 #profile-btn{
     background-color: #F7BE00;
-   border:none;
-   -webkit-box-shadow:none;
-   box-shadow: none;
+    border:none;
+     -webkit-box-shadow:none;
+     box-shadow: none;
 }
-
 
