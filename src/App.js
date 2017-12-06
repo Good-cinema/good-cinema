@@ -4,18 +4,11 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import HomePage from '../src/views/homePage/HomePage';
 import Movie from './components/movie/Movie';
 
-<<<<<<< HEAD
-import SiteFrame from './components/siteFrame/SiteFrame';
-import MovieSearch from './views/movieSearch/MovieSearch.js';
-import LandingPage from './views/landingPage/LandingPage';
-import ProfilePage from './views/profilePage/ProfilePage'
-=======
 import SiteFrame from '../src/components/siteFrame/SiteFrame';
 import MovieSearch from './views/movieSearch/MovieSearch.js';
 import LandingPage from './views/landingPage/LandingPage';
 import ProfilePage from './views/profilePage/ProfilePage'
 // import HomePage from './Views/HomePage/HomePage';
->>>>>>> master
 
 import './App.css';
 
