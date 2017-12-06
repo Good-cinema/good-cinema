@@ -10,6 +10,7 @@
 .title{
     text-align: left;
     padding: 10px;
+  
 }
 .search-poster{
     width: 70px;
@@ -18,3 +19,8 @@
     padding: 0px;
     border: 1px solid lightgray;
 }
+.movielink{
+    color: black;
+
+}
+
