@@ -4,7 +4,7 @@
 }
 .search-results{
     height: 700px;
-    overflow-y: auto;
+    overflow:hidden;
    
 }
 .movie-search-side-bar{

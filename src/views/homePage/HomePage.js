@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-import Carousel from '../../components/carousel/Carousel';
+import Carousel from '../../components/homePageCarousel/HomePageCarousel';
 import logoICON from '../../img/goodcinemalogo.png';
 
 import './homePage.css';

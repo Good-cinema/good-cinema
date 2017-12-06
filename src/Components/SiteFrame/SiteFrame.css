@@ -1,7 +1,7 @@
 
 main{
     margin: 55px 0px 50px 0px;
-    overflow-y: auto;
+    overflow:hidden;
 }
 .newMovies {
     flex: grow;
