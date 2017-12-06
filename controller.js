@@ -42,6 +42,7 @@ function getUser(req, res, next) {
         res.status(400).send(err);
     })
 }
+
 function getUserByEmail(req, res, next) {
     req.app.get('db').getUserByEmail(req.query.email)
     .then(user=>{
@@ -51,10 +52,15 @@ function getUserByEmail(req, res, next) {
         res.status(400).send(err);
     })
 }
+
 function createUser(req, res, next) {
-    req.app.get('db').createUser(req.body)
-    .then(user=>{
-        res.status(201).send(user);
+    const dbInstance = req.app.get('db');
+    dbInstance.createUser(req.body.email, req.body.first_name, req.body.password)
+    .then( () =>{
+        return dbInstance.getUsers(req.body.email);
+    })
+    .then(user => { 
+        res.send(user);
     })
     .catch(err=>{
         res.status(400).send(err);

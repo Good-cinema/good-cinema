@@ -1,0 +1,1 @@
+INSERT INTO users (email, first_name, password) VALUES ($1, $2, $3);
