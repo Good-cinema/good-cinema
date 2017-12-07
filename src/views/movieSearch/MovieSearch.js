@@ -44,12 +44,14 @@ export default class MovieSearch extends Component {
     render() {
         return (
             <div className='flexbox padding-lg'>
-                <div className='flexgrow-2 padding-lg'>
+                <div className='flex-grow-2 padding-lg'>
                     <div ref='results' className="search-results">
                     {
-                        this.state.results.map(
-                            r => <SearchResults key={r.id} result={r} />
-                        )
+                        this.state.results.length == 0 ?
+                            "No Results" :
+                            this.state.results.map(
+                                r => <SearchResults key={r.id} result={r} />
+                            )
                     }
                     </div>
                     <div>
@@ -72,7 +74,7 @@ export default class MovieSearch extends Component {
                     }
                     </div>
                 </div>
-                <div className='flexgrow-1 padding-lg movie-search-side-bar'>
+                <div className='flex-grow-1 padding-lg movie-search-side-bar'>
                     <MovieUpcoming />
                 </div>
             </div>

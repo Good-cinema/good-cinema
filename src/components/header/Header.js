@@ -7,10 +7,19 @@ import queryString from 'query-string';
 
 
 class Header extends Component {
+    constructor(){
+        super();
+        this.searchBoxKeyPressed = this.searchBoxKeyPressed.bind(this);
+    }
     showSearchResults(search){
         this.props.history.push('/MovieSearch?'+queryString.stringify({
             query: search
         }));
+    }
+    searchBoxKeyPressed(e){
+        if (e.key === 'Enter') {
+            this.showSearchResults(this.refs.search_box.value);
+        }
     }
     render() {
         return (
@@ -24,7 +33,7 @@ class Header extends Component {
                 </div>
                 <div className='flex-2'>
                     <div className="input-group add-on ">
-                        <input ref="search_box" type="text" className="form-control search-box" placeholder="Search" name="srch-term"   id="srch-term"></input>
+                        <input ref="search_box" type="text" className="form-control search-box" placeholder="Search" name="srch-term"   id="srch-term" onKeyPress={this.searchBoxKeyPressed}></input>
                         <div className="input-group-btn">
                             <button className="btn btn-default" type="submit" onClick={()=>this.showSearchResults(this.refs.search_box.value)}><i className="glyphicon glyphicon-search"></i></button>
                         </div>
