@@ -1,0 +1,17 @@
+.Upcoming{
+    height:700px;
+   overflow: hidden;
+}
+.search-results{
+    height: 700px;
+<<<<<<< HEAD:src/views/MovieSearch/MovieSearch.css
+    overflow:hidden;
+=======
+    overflow: hidden;
+>>>>>>> f8890a9ce3c37b8de2e63deb4a32dedb77221b3c:src/views/movieSearch/movieSearch.css
+   
+}
+.movie-search-side-bar{
+    height: 700px;
+}
+
