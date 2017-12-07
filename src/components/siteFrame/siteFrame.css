@@ -1,11 +1,7 @@
 
 main{
     margin: 55px 0px 50px 0px;
-<<<<<<< HEAD:src/Components/SiteFrame/SiteFrame.css
     overflow:hidden;
-=======
-    overflow: hidden;
->>>>>>> f8890a9ce3c37b8de2e63deb4a32dedb77221b3c:src/components/siteFrame/siteFrame.css
 }
 .newMovies {
     flex: grow;
