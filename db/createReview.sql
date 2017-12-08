@@ -1,0 +1,1 @@
+INSERT INTO reviews (user_review) VALUES $1;

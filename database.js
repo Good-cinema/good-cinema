@@ -13,7 +13,7 @@ class Database{
         else if(!user.first_name) return Promise.reject("First name is required");
         else if(!user.password) return Promise.reject("Password is required");
         else return this.db.users.save(user)
-            .then(scrubPassword);
+         
     }
     getUser(userId){
         return this.db.users.findOne({id: userId})
@@ -23,7 +23,10 @@ class Database{
         return this.db.users.findOne({email: userEmail})
         .then(scrubPassword);
     }
-  
+    getWatchlist(userId) {
+        return this.db.getWatchlist([userId])
+    }
+    
 }
 
 module.exports = Database;

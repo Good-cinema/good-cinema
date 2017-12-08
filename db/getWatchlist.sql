@@ -1,0 +1,1 @@
+SELECT * from watchlist WHERE user_id = $1;

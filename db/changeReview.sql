@@ -1,0 +1,1 @@
+UPDATE reviews SET user_review = $2 WHERE movie_id = $1;

@@ -4,7 +4,7 @@ const cors = require('cors');
 const massive = require('massive');
 require('dotenv').config()
 const controller = require('./controller');
-const Database = require('./database');
+
 
 const app = express();
 app.use( bodyParser.json() );
@@ -12,8 +12,8 @@ app.use( bodyParser.json() );
 app.use( cors() );
 massive( process.env.CONNECTION_STRING )
     .then(dbInstance => {
-        app.set('db', new Database( dbInstance) )
-        
+        app.set('db', dbInstance)
+        return dbInstance.init();   
     })
     .then(response => {
         console.log('database initialized')
@@ -29,6 +29,14 @@ app.get('/api/get-upcoming-movies', controller.getUpcomingMovies);
 app.get('/api/users/:userId', controller.getUser);
 app.get('/api/users', controller.getUserByEmail);
 app.post('/api/users', controller.createUser);
+app.post('/api/reviews', controller.createReview);
+app.put('/api/reviews', controller.changeReview);
+app.get('/api/reviews/:movieId', controller.getReviewsByMovie);
+app.get('/api/reviews/:userId', controller.getReviewsByUser);
+app.delete('/api/reviews', controller.deleteReview);
+app.post('/api/watchlist', controller.addToWatchlist);
+app.get('/api/watchlist/:userId', controller.getWatchlist);
+app.delete('/api/watchlist', controller.removeFromWatchlist);
 
 
 const port = process.env.PORT || 8080;

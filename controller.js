@@ -34,7 +34,8 @@ function getUpcomingMovies(req, res, next) {
 }
 
 function getUser(req, res, next) {
-    req.app.get('db').getUser(req.params.userId)
+    const dbInstance = req.app.get('db')
+    dbInstance.users.findOne({id: req.params.userId})
     .then(user=>{
         res.send(user);
     })
@@ -43,7 +44,8 @@ function getUser(req, res, next) {
     })
 }
 function getUserByEmail(req, res, next) {
-    req.app.get('db').getUserByEmail(req.query.email)
+    const dbInstance = req.app.get('db');
+    dbInstance.getUserByEmail(req.query.email)
     .then(user=>{
         res.send(user);
     })
@@ -52,12 +54,69 @@ function getUserByEmail(req, res, next) {
     })
 }
 function createUser(req, res, next) {
-    req.app.get('db').createUser(req.body)
+    const dbInstance = req.app.get('db');
+    dbInstance.createUser(req.body)
     .then(user=>{
         res.status(201).send(user);
     })
     .catch(err=>{
         res.status(400).send(err);
+    })
+}
+
+function createReview(req, res) {
+    const dbInstance = req.app.post('db');
+    dbInstance.createReview(req.body)
+    .then(review => {
+        res.send(review);
+    })
+}
+
+function changeReview(req, res) {
+    const dbInstance = req.app.put('db');
+    dbInstance.changeReview(req.body)
+    .then(review => {
+        res.send(review);
+    })
+}
+
+function getReviews(req, res) {
+    const dbInstance = req.app.get('db');
+    dbInstance.getReviewsByUser(req.body)
+    .then(review => {
+        res.send(review);
+    })
+}
+
+function deleteReview(req, res) {
+    const dbInstance = req.app.delete('db');
+    dbInstance.deleteReview(req.body)
+    .then(() => {
+        res.send();
+    })
+}
+
+function addToWatchlist(req, res) {
+    const dbInstance = req.app.post('db');
+    dbInstance.addToWatchlist(req.body)
+    .then(()=> {
+        res.send()
+    })
+}
+
+function getWatchlist(req, res) {
+    const dbInstance = req.app.get('db');
+    dbInstance.getWatchlist(req.params.userId)
+    .then(watchlist =>{
+        res.send(watchlist)
+    })
+  }
+
+function removeFromWatchlist(req, res) {
+    const dbInstance = req.app.delete('db');
+    dbInstance.removeFromWatchlist(req.body)
+    .then(()=> {
+        res.send()
     })
 }
 
@@ -68,5 +127,12 @@ module.exports = {
     getUpcomingMovies: getUpcomingMovies,
     getUser: getUser,
     getUserByEmail: getUserByEmail,
-    createUser: createUser
+    createUser: createUser,
+    createReview: createReview,
+    changeReview: changeReview,
+    getReviews: getReviews,
+    deleteReview: deleteReview,
+    addToWatchlist: addToWatchlist,
+    getWatchlist: getWatchlist,
+    removeFromWatchlist: removeFromWatchlist,
 }
