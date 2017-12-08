@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
+import './leftAlign.css';
+
 export default class MovieTitle extends Component {
     constructor(props) {
         super(props);
@@ -27,7 +29,7 @@ export default class MovieTitle extends Component {
         if (!this.state.movieAPI) return <p>Loading...</p>
         return (
             <div>
-                <span>{this.state.movieAPI.original_title}</span>
+                <span className="leftAlign">{this.state.movieAPI.original_title}</span>
             </div>
         )
     }
