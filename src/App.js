@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import HomePage from './components/homePage/HomePage';
+import HomePage from '../src/views/homePage/HomePage';
 import Movie from './components/movie/Movie';
 
-import SiteFrame from './components/siteFrame/SiteFrame';
+import SiteFrame from '../src/components/siteFrame/SiteFrame';
 import MovieSearch from './views/movieSearch/MovieSearch.js';
 import LandingPage from './views/landingPage/LandingPage';
 import ProfilePage from './views/profilePage/ProfilePage'
@@ -20,7 +20,7 @@ class App extends Component {
           <Switch>
             <Route path='/Login' exact={true} component={ HomePage } />
             <Route path='/' render={(props)=>
-              <SiteFrame> 
+              <SiteFrame history={props.history/*This code allows me to redirect to the search results when using the search box in the header*/}> 
                
                   <Route path='/Landing' component={ LandingPage }/>
                   <Route path='/Movie/:movieId' component={ Movie }/>
@@ -28,7 +28,7 @@ class App extends Component {
                   <Route path='/MyProfile' component={ ProfilePage }/>
                      
               </SiteFrame>
-            } />
+             } />
           </Switch>
         </div>
       </Router>

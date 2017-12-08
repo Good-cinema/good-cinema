@@ -1,0 +1,17 @@
+
+main{
+    margin: 55px 0px 50px 0px;
+    overflow:hidden;
+}
+
+.newMovies {
+    flex: grow;
+    align-self: center;
+}
+
+.upcomingMovies {
+    flex: grow;
+    align-self: stretch;
+}
+
+

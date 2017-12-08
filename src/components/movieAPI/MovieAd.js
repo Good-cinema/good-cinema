@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
+import './leftAlign.css';
 import '../movie/movie.css';
 
 export default class MovieAd extends Component {
@@ -32,7 +33,7 @@ export default class MovieAd extends Component {
         return (
             <div id="imgSize">
                 <a href={movieLink} target="_blank">
-                    <img src={ require("../../img/Amazon-Instant-Video-banner.jpg") } 
+                    <img  className="leftAlign" src={ require("../../img/Amazon-Instant-Video-banner.jpg") } 
                     alt="Amazon Banner" />
                 </a>
             </div>

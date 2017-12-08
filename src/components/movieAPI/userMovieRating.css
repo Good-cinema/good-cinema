@@ -1,0 +1,10 @@
+.starBlock {
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: center;
+    align-content: stretch;
+    height: 35px;
+    width: 200px;
+}

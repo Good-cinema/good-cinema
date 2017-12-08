@@ -5,6 +5,8 @@ function getMovieDetails(req, res, next) {
     movieService.getMovieDetails(req.params.movieId)
     .then(data => {
         res.send(data)
+    }, err=>{
+        res.status(400).send(err);
     })
 }
 
@@ -13,7 +15,7 @@ function getMoviesByQuery(req, res, next) {
     .then(data => {
         res.send(data)
     }, err=>{
-        res.send(err.data);
+        res.status(400).send(err);
     })
 }
 
@@ -22,7 +24,7 @@ function getNewMovies(req, res, next) {
     .then(data => {
         res.send(data);
     }, err=>{
-        res.send(err);
+        res.status(400).send(err);
     })
 }
 
@@ -30,6 +32,8 @@ function getUpcomingMovies(req, res, next) {
     movieService.getUpcomingMovies()
     .then(data => {
         res.send(data)
+    }, err=>{
+        res.status(400).send(err);
     })
 }
 
@@ -43,6 +47,7 @@ function getUser(req, res, next) {
         res.status(400).send(err);
     })
 }
+
 function getUserByEmail(req, res, next) {
     const dbInstance = req.app.get('db');
     dbInstance.getUserByEmail(req.query.email)
@@ -53,11 +58,15 @@ function getUserByEmail(req, res, next) {
         res.status(400).send(err);
     })
 }
+
 function createUser(req, res, next) {
     const dbInstance = req.app.get('db');
-    dbInstance.createUser(req.body)
-    .then(user=>{
-        res.status(201).send(user);
+    dbInstance.createUser(req.body.email, req.body.first_name, req.body.password)
+    .then( () =>{
+        return dbInstance.getUsers(req.body.email);
+    })
+    .then(user => { 
+        res.send(user);
     })
     .catch(err=>{
         res.status(400).send(err);

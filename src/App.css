@@ -52,7 +52,24 @@
   flex-basis: 0;
 }
 
-
+.padding-sm {
+  padding: 4px;
+}
+.padding-md {
+  padding: 8px;
+}
+.right{
+  float: right;
+}
 .scroll-y{
   overflow-y: auto;
+}
+.bold{
+  font-weight: bold;
+}
+.text-lg{
+  font-size: 16px;
+}
+.align-items-middle{
+  align-items: center;
 }
