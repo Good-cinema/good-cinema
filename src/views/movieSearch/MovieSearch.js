@@ -47,7 +47,7 @@ export default class MovieSearch extends Component {
                 <div className='flex-grow-2 padding-lg'>
                     <div ref='results' className="search-results">
                     {
-                        this.state.results.length == 0 ?
+                        this.state.results.length === 0 ?
                             "No Results" :
                             this.state.results.map(
                                 r => <SearchResults key={r.id} result={r} />
