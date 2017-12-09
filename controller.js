@@ -124,11 +124,6 @@ function addToWatchlist(req, res) {
 
 function getWatchlist(req, res) {
     const dbInstance = req.app.get('db');
-<<<<<<< HEAD
-    dbInstance.getWatchlist(req.body.user_id)
-    .then(() => {
-        res.send()
-=======
     dbInstance.getWatchlist(req.params.userId)
     .then(watchlist =>{
         const promises = watchlist.map(item => {
@@ -142,7 +137,6 @@ function getWatchlist(req, res) {
     })
     .catch(err => {
         console.log(err)
->>>>>>> origin/saundra
     })
   }
 

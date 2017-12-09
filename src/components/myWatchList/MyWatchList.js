@@ -10,12 +10,8 @@ export default class MyWatchList extends Component {
         };
     }
 
-<<<<<<< HEAD
-    componentDidMount() {
-=======
     componentDidMount() { 
         console.log(this.props)
->>>>>>> origin/saundra
         axios.get(`http://localhost:8080/api/watchlist/${this.props.userId}`)
             .then(res => {   
                 this.setState({
