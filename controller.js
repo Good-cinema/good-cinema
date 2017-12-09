@@ -63,16 +63,17 @@ function createUser(req, res, next) {
     const dbInstance = req.app.get('db');
     dbInstance.createUser(req.body.email, req.body.first_name, req.body.password)
     .then( () =>{
-        return dbInstance.getUsers(req.body.email);
+        return dbInstance.getUser(req.body.email);
     })
     .then(user => { 
-        res.send(user);
+        res.send(user[0]);
     })
     .catch(err=>{
         res.status(400).send(err);
     })
 }
 
+<<<<<<< HEAD
 function createReview(req, res) {
     const dbInstance = req.app.get('db');
     dbInstance.createReview(req.body)
@@ -138,6 +139,22 @@ function removeFromWatchlist(req, res) {
     })
 }
 
+=======
+function checkUser(req, res, next) {
+    const dbInstance = req.app.get('db');
+    dbInstance.checkUser(req.body.email)
+    .then( (user) => {
+        if(user[0].password === req.body.password) {
+            return res.status(200).send(user);
+        } else {
+            return res.status(400).send('Password Does Not Match');
+        }
+    })
+    .catch( (err) => {
+        res.status(500).send(err);
+    });
+} 
+>>>>>>> master
 module.exports = {
     getMovieDetails: getMovieDetails,
     getMoviesByQuery: getMoviesByQuery,
@@ -146,6 +163,7 @@ module.exports = {
     getUser: getUser,
     getUserByEmail: getUserByEmail,
     createUser: createUser,
+<<<<<<< HEAD
     createReview: createReview,
     changeReview: changeReview,
     getReviewsByMovie: getReviewsByMovie,
@@ -154,4 +172,7 @@ module.exports = {
     addToWatchlist: addToWatchlist,
     getWatchlist: getWatchlist,
     removeFromWatchlist: removeFromWatchlist,
+=======
+    checkUser: checkUser
+>>>>>>> master
 }

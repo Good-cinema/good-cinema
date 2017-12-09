@@ -28,6 +28,7 @@ app.get('/api/get-new-movies', controller.getNewMovies);
 app.get('/api/get-upcoming-movies', controller.getUpcomingMovies);
 app.get('/api/users/:userId', controller.getUser);
 app.post('/api/users', controller.createUser);
+<<<<<<< HEAD
 app.post('/api/reviews', controller.createReview);
 app.put('/api/reviews', controller.changeReview);
 app.get('/api/reviews/:movieId', controller.getReviewsByMovie);
@@ -36,6 +37,9 @@ app.delete('/api/reviews', controller.deleteReview);
 app.post('/api/watchlist', controller.addToWatchlist);
 app.get('/api/watchlist/:userId', controller.getWatchlist);
 app.delete('/api/watchlist', controller.removeFromWatchlist);
+=======
+app.post('/api/login', controller.checkUser);
+>>>>>>> master
 
 const port = process.env.PORT || 8080;
 app.listen( port, function() {console.log(`Server listening on port ${this.address().port}.`); } );
