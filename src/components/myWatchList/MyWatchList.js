@@ -54,7 +54,7 @@ export default class MyWatchList extends Component {
         });
         return (
             <div className="body">
-                <span>{listItems}</span>
+                <span className="watch-list-item">{listItems}</span>
             </div>
         )    
     }    
