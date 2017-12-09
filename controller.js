@@ -124,9 +124,9 @@ function addToWatchlist(req, res) {
 
 function getWatchlist(req, res) {
     const dbInstance = req.app.get('db');
-    dbInstance.getWatchlist(req.params.userId)
-    .then(watchlist =>{
-        res.send(watchlist)
+    dbInstance.getWatchlist(req.body.user_id)
+    .then(() => {
+        res.send()
     })
   }
 

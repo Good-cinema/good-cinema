@@ -11,13 +11,13 @@ CREATE TABLE users (
 CREATE TABLE watchlist (
      id SERIAL PRIMARY KEY NOT NULL,
      user_id INTEGER REFERENCES users(id) NULL,
-     movie_id VARCHAR(255) NOT NULL
+     movie_id VARCHAR(255) NULL
 );
 
 CREATE TABLE reviews (
      id SERIAL PRIMARY KEY NOT NULL, 
      user_id INTEGER REFERENCES users(id) NULL,
-     movie_id VARCHAR(255) NOT NULL,
+     movie_id VARCHAR(255) NULL,
      user_review VARCHAR(255) NOT NULL
 );
 

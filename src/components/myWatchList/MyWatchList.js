@@ -18,7 +18,6 @@ export default class MyWatchList extends Component {
                 })
 
                 this.getMovieDetails(res.data.movie_id)
-                console.log(res.data.movie_id)
             }, () => {
                 this.setState({
                     requestFailed: true
@@ -39,6 +38,7 @@ export default class MyWatchList extends Component {
 
 
     render() {
+        console.log(this.props.userId)
         if (this.state.requestFailed) return <p>Failed!</p>
         if (!this.state.details) return <p>Loading...</p>
         var results = this.state.details.results;

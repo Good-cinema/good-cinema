@@ -53,7 +53,7 @@ class SimpleSlider extends Component {
       <div> 
           <img src={'https://image.tmdb.org/t/p/w300' + result.poster_path} 
           alt="images"/>
-          <span style={{ fontSize: 34}}> 
+          <span className="stars"> 
           <StarRatingComponent
             value={result.vote_average/2} 
             starColor={'yellow'} 
