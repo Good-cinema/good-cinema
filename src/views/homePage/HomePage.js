@@ -7,22 +7,43 @@ import Carousel from '../../components/homePageCarousel/HomePageCarousel';
 import logoICON from '../../img/goodcinemalogo.png';
 
 import './homePage.css';
+import { error } from 'util';
 
 export default class HomePage extends Component {
 
+    checkLogPerson(event) {
+        event.preventDefault()
+        
+        axios.post('http://localhost:8080/api/login', {
+            email: this.refs.checkEmail.value,
+            password: this.refs.checkPass.value
+        })
+        .then( (user) => {
+            this.props.history.push('/Landing')
+        })
+        .catch( (err) => {
+            alert(err);
+            console.log(err);
+        });
+
+    }
+
     addInfo(event) {
         event.preventDefault()
-        const body = {
+        
+        axios.post('http://localhost:8080/api/users', {
             email: this.refs.eMail.value,
             first_name: this.refs.fName.value,
             password: this.refs.passWord.value
-        }
-        
-
-        axios.post('http://localhost:8080/api/users', body)
+        })
         .then( (regUser) => {
+            this.props.history.push('/Landing');
             console.log(regUser);
+        })
+        .catch( (err) => {
+            alert(err);
         });
+        console.log(this.refs.eMail.value);
 
         // Clearing Input To Empty Srting
         this.refs.fName.value = '';
@@ -31,6 +52,9 @@ export default class HomePage extends Component {
     }
 
     render() {
+
+        // this.redirect.bind(this)
+
         return(
             <div className='fullPage'>
                 <div className='homePageTopPageBckGrnd content'>
@@ -40,13 +64,11 @@ export default class HomePage extends Component {
                     </div>
 
                     <div className='homeForms'>
-                        <input className='inputSignIn' type='text' placeholder='Email Address' name='name'/>
-                        <input className='inputSignIn' type='text' placeholder='Password' />
-                        <Link to='/Landing'>
-                            <button
-                            className='buttonControl'
-                            >Sign In</button>
-                        </Link>
+                        <form onSubmit={this.checkLogPerson.bind(this)} >
+                            <input className='inputSignIn' type='text' placeholder='Email Address' ref='checkEmail' />
+                            <input className='inputSignIn' type='text' placeholder='Password' ref='checkPass' />
+                            <button className='buttonControl'>Sign In</button>
+                        </form>
 
                         <br/><br/>
 
@@ -57,9 +79,7 @@ export default class HomePage extends Component {
                             <br/>
                             <input className='inputReg' type='text' placeholder='Password' ref='passWord' />
                             <br/>
-                            <Link to='/Landing'>
-                                <button className='buttonControl' >Sign Up</button>
-                            </Link>
+                            <button className='buttonControl' >Sign Up</button>
                         </form>
                     </div>
                 </div>

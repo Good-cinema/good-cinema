@@ -28,6 +28,7 @@ app.get('/api/get-new-movies', controller.getNewMovies);
 app.get('/api/get-upcoming-movies', controller.getUpcomingMovies);
 app.get('/api/users/:userId', controller.getUser);
 app.post('/api/users', controller.createUser);
+app.post('/api/login', controller.checkUser);
 
 const port = process.env.PORT || 8080;
 app.listen( port, function() {console.log(`Server listening on port ${this.address().port}.`); } );

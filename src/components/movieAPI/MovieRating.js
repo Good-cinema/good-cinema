@@ -31,7 +31,7 @@ export default class MovieRating extends Component {
     }
 
     render() {
-        const { rating } = this.state;
+        
         if (this.state.requestFailed) return <p>Failed!</p>
         if (!this.state.movieAPI) return <p>Loading...</p>
         return (

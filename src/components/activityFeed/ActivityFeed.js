@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './activityFeed.css';
-import ActivityReview from './../activityReview/ActivityReview';
+import ActivityReview from '../activityReview/ActivityReview';
 import ProfileImg from './../../img/user-gray.svg';
 
 class ActivityFeed extends Component {
