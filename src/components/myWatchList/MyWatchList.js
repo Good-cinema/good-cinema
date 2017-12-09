@@ -41,7 +41,7 @@ export default class MyWatchList extends Component {
         console.log(this.props.userId)
         if (this.state.requestFailed) return <p>Failed!</p>
         if (!this.state.details) return <p>Loading...</p>
-        var results = this.state.details.results;
+        var results = this.state.movieAPI.results;
         var listItems = results.map((result, i) =>
             <li key={`my-watchlist-${i}`}>
                 <a href={'../Movie/' + result.id}>
@@ -55,7 +55,7 @@ export default class MyWatchList extends Component {
          );
         return (
             <div className="body">
-                <span className="spanSideBar"><p>New Releases</p>{listItems}</span>
+                <span>{listItems}</span>
             </div>
         )    
     }    
