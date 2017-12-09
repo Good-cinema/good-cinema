@@ -43,17 +43,10 @@ export default class MyWatchList extends Component {
     render() {
         console.log(this.props.userId)
         if (this.state.requestFailed) return <p>Failed!</p>
-<<<<<<< HEAD
-        if (!this.state.details) return <p>Loading...</p>
-        var results = this.state.movieAPI.results;
-        var listItems = results.map((result, i) =>
-            <li key={`my-watchlist-${i}`}>
-=======
         if (!this.state.movieAPI) return <p>Loading...</p>
        
         var listItems = this.state.movieAPI.map((result, i) => {
            return <li key={i}>
->>>>>>> origin/saundra
                 <a href={'../Movie/' + result.id}>
                     <img src={'https://image.tmdb.org/t/p/w500' + result.poster_path} alt='Poster'/>
                 </a>
