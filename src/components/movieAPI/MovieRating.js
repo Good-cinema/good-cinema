@@ -5,18 +5,13 @@ import "../movie/movie.css";
 import './movierating.css';
 
 export default class MovieRating extends Component {
-    constructor() {
-        super();
-        
+    constructor(props) {
+        super(props);
         this.state = {
-            rating: 1
+            requestFailed: false
         };
-}
-
-    onStarClick(nextValue, prevValue, name) {
-        this.setState({rating: nextValue});
     }
-
+    
     componentDidMount() {
         axios.get(`http://localhost:8080/api/get-movie-details/${this.props.movieId}`)
         .then(res => {   
@@ -31,7 +26,6 @@ export default class MovieRating extends Component {
     }
 
     render() {
-        const { rating } = this.state;
         if (this.state.requestFailed) return <p>Failed!</p>
         if (!this.state.movieAPI) return <p>Loading...</p>
         return (
