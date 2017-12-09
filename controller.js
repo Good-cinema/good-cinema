@@ -61,16 +61,30 @@ function createUser(req, res, next) {
     const dbInstance = req.app.get('db');
     dbInstance.createUser(req.body.email, req.body.first_name, req.body.password)
     .then( () =>{
-        return dbInstance.getUsers(req.body.email);
+        return dbInstance.getUser(req.body.email);
     })
     .then(user => { 
-        res.send(user);
+        res.send(user[0]);
     })
     .catch(err=>{
         res.status(400).send(err);
     })
 }
 
+function checkUser(req, res, next) {
+    const dbInstance = req.app.get('db');
+    dbInstance.checkUser(req.body.email)
+    .then( (user) => {
+        if(user[0].password === req.body.password) {
+            return res.status(200).send(user);
+        } else {
+            return res.status(400).send('Password Does Not Match');
+        }
+    })
+    .catch( (err) => {
+        res.status(500).send(err);
+    });
+} 
 module.exports = {
     getMovieDetails: getMovieDetails,
     getMoviesByQuery: getMoviesByQuery,
@@ -78,5 +92,6 @@ module.exports = {
     getUpcomingMovies: getUpcomingMovies,
     getUser: getUser,
     getUserByEmail: getUserByEmail,
-    createUser: createUser
+    createUser: createUser,
+    checkUser: checkUser
 }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import WatchlistButton from './../watchlistButton/WatchlistButton';
-import axios from 'axios';
+
 import './searchResults.css';
 import { Link } from 'react-router-dom';
 
