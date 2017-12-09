@@ -126,7 +126,17 @@ function getWatchlist(req, res) {
     const dbInstance = req.app.get('db');
     dbInstance.getWatchlist(req.params.userId)
     .then(watchlist =>{
-        res.send(watchlist)
+        const promises = watchlist.map(item => {
+           return movieService.getMovieDetails(item.movie_id)
+        }) 
+
+        Promise.all(promises)
+            .then(response => {
+                res.status(200).send(response);
+            })
+    })
+    .catch(err => {
+        console.log(err)
     })
   }
 

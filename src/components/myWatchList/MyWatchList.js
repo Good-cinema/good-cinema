@@ -10,14 +10,13 @@ export default class MyWatchList extends Component {
         };
     }
 
-    componentDidMount() {
-        axios.get(`http://localhost:8080/api/watchlist/${1}`)
+    componentDidMount() { 
+        console.log(this.props)
+        axios.get(`http://localhost:8080/api/watchlist/${this.props.userId}`)
             .then(res => {   
                 this.setState({
                     movieAPI: res.data
                 })
-
-                this.getMovieDetails(res.data.movie_id)
             }, () => {
                 this.setState({
                     requestFailed: true
@@ -39,10 +38,10 @@ export default class MyWatchList extends Component {
 
     render() {
         if (this.state.requestFailed) return <p>Failed!</p>
-        if (!this.state.details) return <p>Loading...</p>
-        var results = this.state.details.results;
-        var listItems = results.map((result, i) =>
-            <li key={`my-watchlist-${i}`}>
+        if (!this.state.movieAPI) return <p>Loading...</p>
+       
+        var listItems = this.state.movieAPI.map((result, i) => {
+           return <li key={i}>
                 <a href={'../Movie/' + result.id}>
                     <img src={'https://image.tmdb.org/t/p/w500' + result.poster_path} alt='Poster'/>
                 </a>
@@ -51,10 +50,10 @@ export default class MyWatchList extends Component {
                 <br/>
                 {result.release_date}
             </li>
-         );
+        });
         return (
             <div className="body">
-                <span className="spanSideBar"><p>New Releases</p>{listItems}</span>
+                <span>{listItems}</span>
             </div>
         )    
     }    

@@ -17,7 +17,7 @@ export default class Profile extends Component {
                     <div className="bold text-lg padding-md">
                         Watch List
                     </div>
-                    <MyWatchList />
+                    <MyWatchList userId="1"/>
                 </div>
             </div>
         );
