@@ -73,7 +73,6 @@ function createUser(req, res, next) {
     })
 }
 
-<<<<<<< HEAD
 function createReview(req, res) {
     const dbInstance = req.app.get('db');
     dbInstance.createReview(req.body)
@@ -139,7 +138,6 @@ function removeFromWatchlist(req, res) {
     })
 }
 
-=======
 function checkUser(req, res, next) {
     const dbInstance = req.app.get('db');
     dbInstance.checkUser(req.body.email)
@@ -154,7 +152,6 @@ function checkUser(req, res, next) {
         res.status(500).send(err);
     });
 } 
->>>>>>> master
 module.exports = {
     getMovieDetails: getMovieDetails,
     getMoviesByQuery: getMoviesByQuery,
@@ -163,7 +160,6 @@ module.exports = {
     getUser: getUser,
     getUserByEmail: getUserByEmail,
     createUser: createUser,
-<<<<<<< HEAD
     createReview: createReview,
     changeReview: changeReview,
     getReviewsByMovie: getReviewsByMovie,
@@ -172,7 +168,5 @@ module.exports = {
     addToWatchlist: addToWatchlist,
     getWatchlist: getWatchlist,
     removeFromWatchlist: removeFromWatchlist,
-=======
     checkUser: checkUser
->>>>>>> master
 }
