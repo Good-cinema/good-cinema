@@ -15,7 +15,7 @@ export default class Profile extends Component {
                 </div>
                 <div className="flex-grow-1 padding-lg">
                     <div className="bold text-lg padding-md">
-                        Watch List
+                        Watchlist
                     </div>
                     <MyWatchList />
                 </div>

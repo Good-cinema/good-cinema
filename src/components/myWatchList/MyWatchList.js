@@ -11,13 +11,14 @@ export default class MyWatchList extends Component {
     }
 
     componentDidMount() {
-        axios.get(`http://localhost:8080/api/watchlist/${1}`)
+        axios.get(`http://localhost:8080/api/watchlist/${this.props.userId}`)
             .then(res => {   
                 this.setState({
                     movieAPI: res.data
                 })
 
                 this.getMovieDetails(res.data.movie_id)
+                console.log(res.data.movie_id)
             }, () => {
                 this.setState({
                     requestFailed: true
