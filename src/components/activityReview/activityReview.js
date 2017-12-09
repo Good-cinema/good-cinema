@@ -6,6 +6,7 @@ import WatchlistButton from './../watchlistButton/WatchlistButton';
 
 class ActivityReview extends Component{
     render(){
+        console.log(this.props);
         return(
            
             <div className='flexbox ActivityReview'>

@@ -35,8 +35,8 @@ export default class MyReviewList extends Component {
         return (
             <div>
                {
-                   this.state.reviews.map( review => (
-                       <MyReview review={review}/>
+                   this.state.reviews.map( (review, i) => (
+                       <MyReview key={`my-review-list-${i}`} review={review}/>
                    ) )
                }
             </div>

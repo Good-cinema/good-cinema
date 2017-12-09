@@ -12,7 +12,7 @@ import UserMovieRating from '../movieAPI/UserMovieRating';
 export default class Movie extends Component {
     
     render() {
-        console.log(this.props.match.params)
+        console.log(this.props)
         return(
             <div className="movieBody equalHMRWrap">
                 <span className="box equalHMR"><h1><MovieTitle movieId={this.props.match.params.movieId} /></h1></span>
@@ -20,7 +20,7 @@ export default class Movie extends Component {
                     <MoviePoster movieId={this.props.match.params.movieId} />
                 </span>
                 <span className="box  equalHMR marginBottom">
-                    <WatchlistButton />
+                    <WatchlistButton movieId={this.props.match.params.movieId} userId={this.props.match.params.userId}/>
                 </span>
                 <span className="box equalHMR marginLeft marginTop">
                     <MovieRating movieId={this.props.match.params.movieId} />

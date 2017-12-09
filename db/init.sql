@@ -10,13 +10,13 @@ CREATE TABLE users (
 
 CREATE TABLE watchlist (
      id SERIAL PRIMARY KEY NOT NULL,
-     user_id INTEGER REFERENCES users(id) NOT NULL,
+     user_id INTEGER REFERENCES users(id) NULL,
      movie_id VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE reviews (
      id SERIAL PRIMARY KEY NOT NULL, 
-     user_id INTEGER REFERENCES users(id) NOT NULL,
+     user_id INTEGER REFERENCES users(id) NULL,
      movie_id VARCHAR(255) NOT NULL,
      user_review VARCHAR(255) NOT NULL
 );
@@ -27,7 +27,8 @@ INSERT INTO users (email, first_name, last_name, password) VALUES
 
 INSERT INTO watchlist (user_id, movie_id) VALUES
 (1, '200'), 
-(1, '101');
+(1, '101'),
+(2, '293768');
 
 INSERT INTO reviews (user_id, movie_id, user_review) VALUES
 (1, '200', 'This was so cool!'),

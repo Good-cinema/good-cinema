@@ -74,7 +74,7 @@ function createUser(req, res, next) {
 }
 
 function createReview(req, res) {
-    const dbInstance = req.app.post('db');
+    const dbInstance = req.app.get('db');
     dbInstance.createReview(req.body)
     .then(review => {
         res.send(review);
@@ -82,14 +82,22 @@ function createReview(req, res) {
 }
 
 function changeReview(req, res) {
-    const dbInstance = req.app.put('db');
+    const dbInstance = req.app.get('db');
     dbInstance.changeReview(req.body)
     .then(review => {
         res.send(review);
     })
 }
 
-function getReviews(req, res) {
+function getReviewsByMovie(req, res) {
+    const dbInstance = req.app.get('db');
+    dbInstance.getReviewsByMovie(req.body)
+    .then(review => {
+        res.send(review);
+    })
+}
+
+function getReviewsByUser(req, res) {
     const dbInstance = req.app.get('db');
     dbInstance.getReviewsByUser(req.body)
     .then(review => {
@@ -98,7 +106,7 @@ function getReviews(req, res) {
 }
 
 function deleteReview(req, res) {
-    const dbInstance = req.app.delete('db');
+    const dbInstance = req.app.get('db');
     dbInstance.deleteReview(req.body)
     .then(() => {
         res.send();
@@ -106,8 +114,9 @@ function deleteReview(req, res) {
 }
 
 function addToWatchlist(req, res) {
-    const dbInstance = req.app.post('db');
-    dbInstance.addToWatchlist(req.body)
+    const dbInstance = req.app.get('db');
+    const { user_id, movie_id } = req.body
+    dbInstance.addToWatchlist(user_id, movie_id)
     .then(()=> {
         res.send()
     })
@@ -122,7 +131,7 @@ function getWatchlist(req, res) {
   }
 
 function removeFromWatchlist(req, res) {
-    const dbInstance = req.app.delete('db');
+    const dbInstance = req.app.get('db');
     dbInstance.removeFromWatchlist(req.body)
     .then(()=> {
         res.send()
@@ -139,7 +148,8 @@ module.exports = {
     createUser: createUser,
     createReview: createReview,
     changeReview: changeReview,
-    getReviews: getReviews,
+    getReviewsByMovie: getReviewsByMovie,
+    getReviewsByUser: getReviewsByUser,
     deleteReview: deleteReview,
     addToWatchlist: addToWatchlist,
     getWatchlist: getWatchlist,
