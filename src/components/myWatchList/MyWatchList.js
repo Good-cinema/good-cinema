@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import "./myWatchList.css";
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 export default class MyWatchList extends Component {
     constructor(props) {
@@ -12,7 +13,7 @@ export default class MyWatchList extends Component {
 
     componentDidMount() { 
         console.log(this.props)
-        axios.get(`http://localhost:8080/api/watchlist/${this.props.userId}`)
+        axios.get(`/api/watchlist/${this.props.userId}`)
             .then(res => {   
                 this.setState({
                     movieAPI: res.data
@@ -25,7 +26,7 @@ export default class MyWatchList extends Component {
     };
 
     getMovieDetails(movieId) {
-        return axios.get(`http://localhost:8080/api/get-movie-details/${movieId}`)
+        return axios.get(`/api/get-movie-details/${movieId}`)
             .then(res => {
                 this.setState({
                     details: res.data
@@ -43,9 +44,9 @@ export default class MyWatchList extends Component {
        
         var listItems = this.state.movieAPI.map((result, i) => {
            return <li key={i}>
-                <a href={'../Movie/' + result.id}>
+                <Link to={'/Movie/' + result.id}>
                     <img src={'https://image.tmdb.org/t/p/w500' + result.poster_path} alt='Poster'/>
-                </a>
+                </Link>
                 <br/>
                 <b>{result.title}</b>
                 <br/>

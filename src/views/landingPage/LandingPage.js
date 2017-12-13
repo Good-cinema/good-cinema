@@ -13,7 +13,7 @@ class LandingPage extends Component{
         };
     }
     componentDidMount(){
-        axios.get('http://localhost:8080/api/get-new-movies')
+        axios.get('/api/get-new-movies')
         .then(res => {
             this.setState({
                 newMovies: res.data.results

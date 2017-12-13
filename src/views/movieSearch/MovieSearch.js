@@ -29,7 +29,7 @@ export default class MovieSearch extends Component {
         });
     }
     loadResults({page, query}) {
-        axios.get('http://localhost:8080/api/get-movies-by-query',{
+        axios.get('/api/get-movies-by-query',{
             params:{ query: query, page: page || 1 }
         })
         .then(res => {

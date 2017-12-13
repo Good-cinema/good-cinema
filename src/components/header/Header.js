@@ -1,8 +1,10 @@
+import { CancelToken } from 'axios';
 import React, { Component } from 'react';
 import './../../App.css';
 import './header.css';
 import Logo from './../../img/logo-01.svg';
 import queryString from 'query-string';
+import { Link } from 'react-router-dom';
 
 
 class Header extends Component {
@@ -25,9 +27,9 @@ class Header extends Component {
             <div className='Header flexbox'>
 
                 <div className='logo'>
-                    <a href="/Landing">
+                    <Link to="/Landing">
                     <img className='center-block' width='50' height='50' src={Logo} alt='Logo'></img>
-                    </a>
+                    </Link>
                     
                 </div>
                 <div className='flex-2'>
@@ -46,9 +48,9 @@ class Header extends Component {
                             <span className="caret"></span>
                         </button>
                         <ul className="dropdown-menu">
-                            <li><a href="/MyProfile">My profile</a></li>
+                            <li><Link to="/MyProfile">My profile</Link></li>
                             <li role="separator" className="divider"></li>
-                            <li><a href="/Login">Sign out</a></li>
+                            <li><Link to="/Login">Sign out</Link></li>
                         </ul>
                     </div>
                 </div>

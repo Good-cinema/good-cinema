@@ -13,7 +13,7 @@ export default class MovieRating extends Component {
     }
     
     componentDidMount() {
-        axios.get(`http://localhost:8080/api/get-movie-details/${this.props.movieId}`)
+        axios.get(`/api/get-movie-details/${this.props.movieId}`)
         .then(res => {   
             this.setState({
                 movieAPI: res.data

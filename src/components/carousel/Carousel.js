@@ -1,6 +1,7 @@
 // React Slick Slider
 import React, { Component } from 'react';
 import Slider from 'react-slick';
+import { Link } from 'react-router-dom';
 // This is the default CSS for the carousel.
 import "../../../node_modules/slick-carousel/slick/slick.css";
 import "../../../node_modules/slick-carousel/slick/slick-theme.css";
@@ -29,8 +30,8 @@ class SimpleSlider extends Component {
         {
           (this.props.movies||[]).map(movie=>
             <div className="carousel-image">
-              <a href={'../Movie/' + movie.id}><img src={ 'https://image.tmdb.org/t/p/w342' + movie.poster_path }
-                alt={movie.original_title} /></a>
+              <Link to={'/Movie/' + movie.id}><img src={ 'https://image.tmdb.org/t/p/w342' + movie.poster_path }
+                alt={movie.original_title} /></Link>
             </div>
           )
         }

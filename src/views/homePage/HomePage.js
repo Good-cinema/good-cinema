@@ -14,7 +14,7 @@ export default class HomePage extends Component {
     checkLogPerson(event) {
         event.preventDefault()
         
-        axios.post('http://localhost:8080/api/login', {
+        axios.post('/api/login', {
             email: this.refs.checkEmail.value,
             password: this.refs.checkPass.value
         })
@@ -31,7 +31,7 @@ export default class HomePage extends Component {
     addInfo(event) {
         event.preventDefault()
         
-        axios.post('http://localhost:8080/api/users', {
+        axios.post('/api/users', {
             email: this.refs.eMail.value,
             first_name: this.refs.fName.value,
             password: this.refs.passWord.value

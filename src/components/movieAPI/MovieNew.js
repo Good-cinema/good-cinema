@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 import './moviesidebar.css';
 
@@ -12,7 +13,7 @@ export default class NewMovies extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:8080/api/get-new-movies')
+        axios.get('/api/get-new-movies')
         .then(res => {   
             this.setState({
                 movieAPI: res.data
@@ -29,8 +30,8 @@ export default class NewMovies extends Component {
         if (!this.state.movieAPI) return <p>Loading...</p>
         var results = this.state.movieAPI.results;
         var listItems = results.map((result) =>
-            <li> <a href={'../Movie/' + result.id}>
-            <img src={'https://image.tmdb.org/t/p/w500' + result.poster_path} alt='Poster'/></a>
+            <li> <Link to={'/Movie/' + result.id}>
+            <img src={'https://image.tmdb.org/t/p/w500' + result.poster_path} alt='Poster'/></Link>
             <br/> <b>{result.title}</b>
             <br/> {result.release_date}</li>
          );

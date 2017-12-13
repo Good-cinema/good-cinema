@@ -7,6 +7,7 @@ const controller = require('./controller');
 
 
 const app = express();
+app.use(express.static("./build"));
 app.use( bodyParser.json() );
 
 app.use( cors() );

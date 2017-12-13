@@ -14,7 +14,7 @@ export default class WatchlistButton extends Component {
         }
     
 
-    axios.post('http://localhost:8080/api/watchlist', body)
+    axios.post('/api/watchlist', body)
     .then( (watchlistItem)=>{
         console.log(watchlistItem);
     })
