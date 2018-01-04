@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import WatchlistButton from './../watchlistButton/WatchlistButton';
-
 import './searchResults.css';
 import { Link } from 'react-router-dom';
 

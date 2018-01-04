@@ -20,3 +20,8 @@
     min-height: 0;
     min-width: 0;
   }
+
+  .stars {
+      display: flex;
+      font-size: 34px;
+  }

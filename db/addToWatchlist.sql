@@ -1,0 +1,1 @@
+INSERT INTO watchlist (user_id, movie_id) VALUES ($1, $2);

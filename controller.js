@@ -38,7 +38,8 @@ function getUpcomingMovies(req, res, next) {
 }
 
 function getUser(req, res, next) {
-    req.app.get('db').getUser(req.params.userId)
+    const dbInstance = req.app.get('db')
+    dbInstance.users.findOne({id: req.params.userId})
     .then(user=>{
         res.send(user);
     })
@@ -48,7 +49,8 @@ function getUser(req, res, next) {
 }
 
 function getUserByEmail(req, res, next) {
-    req.app.get('db').getUserByEmail(req.query.email)
+    const dbInstance = req.app.get('db');
+    dbInstance.getUserByEmail(req.query.email)
     .then(user=>{
         res.send(user);
     })
@@ -68,6 +70,81 @@ function createUser(req, res, next) {
     })
     .catch(err=>{
         res.status(400).send(err);
+    })
+}
+
+function createReview(req, res) {
+    const dbInstance = req.app.get('db');
+    dbInstance.createReview(req.body)
+    .then(review => {
+        res.send(review);
+    })
+}
+
+function changeReview(req, res) {
+    const dbInstance = req.app.get('db');
+    dbInstance.changeReview(req.body)
+    .then(review => {
+        res.send(review);
+    })
+}
+
+function getReviewsByMovie(req, res) {
+    const dbInstance = req.app.get('db');
+    dbInstance.getReviewsByMovie(req.body)
+    .then(review => {
+        res.send(review);
+    })
+}
+
+function getReviewsByUser(req, res) {
+    const dbInstance = req.app.get('db');
+    dbInstance.getReviewsByUser(req.body)
+    .then(review => {
+        res.send(review);
+    })
+}
+
+function deleteReview(req, res) {
+    const dbInstance = req.app.get('db');
+    dbInstance.deleteReview(req.body)
+    .then(() => {
+        res.send();
+    })
+}
+
+function addToWatchlist(req, res) {
+    const dbInstance = req.app.get('db');
+    const { user_id, movie_id } = req.body
+    dbInstance.addToWatchlist(user_id, movie_id)
+    .then(()=> {
+        res.send()
+    })
+}
+
+function getWatchlist(req, res) {
+    const dbInstance = req.app.get('db');
+    dbInstance.getWatchlist(req.params.userId)
+    .then(watchlist =>{
+        const promises = watchlist.map(item => {
+           return movieService.getMovieDetails(item.movie_id)
+        }) 
+
+        Promise.all(promises)
+            .then(response => {
+                res.status(200).send(response);
+            })
+    })
+    .catch(err => {
+        console.log(err)
+    })
+  }
+
+function removeFromWatchlist(req, res) {
+    const dbInstance = req.app.get('db');
+    dbInstance.removeFromWatchlist(req.body)
+    .then(()=> {
+        res.send()
     })
 }
 
@@ -93,5 +170,13 @@ module.exports = {
     getUser: getUser,
     getUserByEmail: getUserByEmail,
     createUser: createUser,
+    createReview: createReview,
+    changeReview: changeReview,
+    getReviewsByMovie: getReviewsByMovie,
+    getReviewsByUser: getReviewsByUser,
+    deleteReview: deleteReview,
+    addToWatchlist: addToWatchlist,
+    getWatchlist: getWatchlist,
+    removeFromWatchlist: removeFromWatchlist,
     checkUser: checkUser
 }

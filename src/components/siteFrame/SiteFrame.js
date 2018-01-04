@@ -3,6 +3,7 @@ import './../../App.css';
 import Header from './../header/Header';
 import Footer from './../footer/Footer';
 import './siteFrame.css';
+import { withRouter } from 'react-router-dom';
 
 
 class SiteFrame extends Component {
@@ -19,5 +20,5 @@ class SiteFrame extends Component {
         );
     }
 }
-export default SiteFrame;
+export default withRouter(SiteFrame);
 

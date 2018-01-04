@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 import './leftAlign.css';
 import '../movie/movie.css';
@@ -13,7 +14,7 @@ export default class MovieAd extends Component {
     }
 
     componentDidMount() {
-        axios.get(`http://localhost:8080/api/get-movie-details/${this.props.movieId}`)
+        axios.get(`/api/get-movie-details/${this.props.movieId}`)
         .then(res => {   
             this.setState({
                 movieAPI: res.data
@@ -32,10 +33,10 @@ export default class MovieAd extends Component {
         const movieLink = "https://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Dinstant-video&field-keywords=" + title;
         return (
             <div id="imgSize">
-                <a href={movieLink} target="_blank">
+                <Link to={movieLink} target="_blank">
                     <img  className="leftAlign" src={ require("../../img/Amazon-Instant-Video-banner.jpg") } 
                     alt="Amazon Banner" />
-                </a>
+                </Link>
             </div>
         )
     }

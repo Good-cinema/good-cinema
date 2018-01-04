@@ -15,17 +15,17 @@ export default class MyReviewList extends Component {
                     stars: 3
                 },
                 {
-                    movie_title: "Jumanji",
-                    poster_url: require('./../../img/jumanjiposter.jpg'),
+                    movie_title: "The Holiday",
+                    poster_url: require('./../../img/holiday.jpg'),
                     profile_url: require('./../../img/user-gray.svg'),
-                    review_text: 'Everyone should watch this movie',
-                    stars: 3
+                    review_text: 'The perfect holiday movie!',
+                    stars: 5
                 },
                 {
-                    movie_title: "This is a really really really long title that is supposed to wrap around when it hits the stars",
-                    poster_url: require('./../../img/jumanjiposter.jpg'),
+                    movie_title: "Rocky",
+                    poster_url: require('./../../img/rocky.jpeg'),
                     profile_url: require('./../../img/user-gray.svg'),
-                    review_text: 'Everyone should watch this movie. Everyone should watch this movie. Everyone should watch this movie. Everyone should watch this movie. Everyone should watch this movie. Everyone should watch this movie. Everyone should watch this movie. Everyone should watch this movie. Everyone should watch this movie. Everyone should watch this movie. Everyone should watch this movie. Everyone should watch this movie. Everyone should watch this movie. Everyone should watch this movie. ',
+                    review_text: 'Sylvester Stallone is really sloughing it off shamelessly in Rocky IV, but its still impossible not to root for old Rocky Balboa to get up off the canvas and whup that bully one more time.',
                     stars: 3
                 }
             ],
@@ -35,10 +35,15 @@ export default class MyReviewList extends Component {
         return (
             <div>
                {
-                   this.state.reviews.map( review => (
-                       <MyReview review={review}/>
+                   this.state.reviews.map( (review, i) => (
+                       <MyReview key={`my-review-list-${i}`} review={review}/>
                    ) )
+
+                   
+
                }
+               
+            
             </div>
         );
     }
